@@ -1,0 +1,293 @@
+<sdf version="1.6">
+  <world name="default">
+    <light name="sun" type="directional">
+      <cast_shadows>1</cast_shadows>
+      <pose frame="">-11.8208 -19.3843 17.2198 0 -0 0</pose>
+      <diffuse>0.7 0.7 0.7 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>0.3698 0.4 -0.5</direction>
+    </light>
+
+    <model name="ground">
+      <static>1</static>
+      <link name="link">
+        <visual name="visual">
+          <cast_shadows>0</cast_shadows>
+          <pose frame="">0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://empty_world/meshes/emptyworldground.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <pose frame="">0 0 0.016 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>22.938 22.954 0.016</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <model name="nrppanel">
+      <static>1</static>
+      <pose frame="">-3.84038 3.49072 -1.79562 0 -0 1.55</pose>
+      <static>1</static>
+      <link name="nrppanel::body">
+        <collision name="nrppanel">
+          <pose frame="">0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://nrp_panel/meshes/nrppanel-coll.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="nrppanel">
+          <cast_shadows>1</cast_shadows>
+          <geometry>
+            <mesh>
+              <uri>model://nrp_panel/meshes/nrppanel.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+        <pose frame="">0 0 0 0 -0 0</pose>
+      </link>
+    </model>
+
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+
+    <model name="box_0">
+      <static>1</static>
+      <pose frame="">0 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+  <!--model name='cyl_1'>
+    <pose>
+      0.1 0.1 1.05
+      0 0 0
+    </pose>
+    <link name='cyl_1'>
+      <inertial>
+        <mass>10.0</mass>
+      </inertial>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+  <model name='cyl_2'>
+    <pose>
+      -0.1 0.1 1.05
+      0 0 0
+    </pose>
+    <link name='cyl_2'>
+      <inertial>
+        <mass>10.0</mass>
+      </inertial>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Green</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+
+  <model name='cyl_3'>
+    <pose>
+      0.1 -0.1 1.05
+      0 0 0
+    </pose>
+    <link name='cyl_3'>
+      <inertial>
+        <mass>10.0</mass>
+      </inertial>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+
+
+  <model name='cyl_4'>
+    <pose>
+      -0.1 -0.1 1.05
+      0 0 0
+    </pose>
+    <link name='cyl_4'>
+      <inertial>
+        <mass>10.0</mass>
+      </inertial>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.01</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Black</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model-->
+
+
+  </world>
+</sdf>

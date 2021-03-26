@@ -1,0 +1,3837 @@
+<sdf version='1.6'>
+  <model name='mouse_v2_model'>
+    <link name="whisker_L0">
+      <pose>0 -0.15 0.009 0.2 1.570795 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="whisker_L0_collision">
+        <pose>0 0 0.029500000000000002 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>5.0E-4</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="whisker_L0_visual">
+        <pose>0 0 0.029500000000000002 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>5.0E-4</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="whisker_L0_joint" type="revolute">
+      <parent>head_link</parent>
+      <child>whisker_L0</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="whisker_L1">
+      <pose>0 -0.15 0.009 0.4 1.570795 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="whisker_L1_collision">
+        <pose>0 0 0.017 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>5.0E-4</radius>
+            <length>0.025</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="whisker_L1_visual">
+        <pose>0 0 0.017 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>5.0E-4</radius>
+            <length>0.025</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="whisker_L1_joint" type="revolute">
+      <parent>head_link</parent>
+      <child>whisker_L1</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="whisker_R0">
+      <pose>0 -0.15 0.009 0.2 -1.570795 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="whisker_R0_collision">
+        <pose>0 0 0.029500000000000002 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>5.0E-4</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="whisker_R0_visual">
+        <pose>0 0 0.029500000000000002 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>5.0E-4</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="whisker_R0_joint" type="revolute">
+      <parent>head_link</parent>
+      <child>whisker_R0</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="whisker_R1">
+      <pose>0 -0.15 0.009 0.4 -1.570795 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="whisker_R1_collision">
+        <pose>0 0 0.017 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>5.0E-4</radius>
+            <length>0.025</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="whisker_R1_visual">
+        <pose>0 0 0.017 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>5.0E-4</radius>
+            <length>0.025</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="whisker_R1_joint" type="revolute">
+      <parent>head_link</parent>
+      <child>whisker_R1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1</upper>
+          <effort>1000</effort>
+          <velocity>1000</velocity>
+        </limit>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    
+    <link name='root_link'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <link name='joint_1_obj_hips_002_link'>
+      <pose frame=''>5.3e-05 -0.001377 0 -1.57079 -1.57079 3.14159</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_002_link_visual'>
+        <pose frame=''>-0 0 -0 -1.5708 0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_002_link_visual_1'>
+        <pose frame=''>-0 0 -0 -1.5708 0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_002_joint' type='revolute'>
+      <child>joint_1_obj_hips_002_link</child>
+      <parent>root_link</parent>
+      <axis>
+        <xyz>0 -0 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_002_link'>
+      <pose frame=''>5.3e-05 -0.001377 0 -0 0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_002_link_collision'>
+        <pose frame=''>-5.4e-05 -0.002549 -8.7e-05 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.002_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_002_link_visual'>
+        <pose frame=''>-5.4e-05 -0.002549 -8.7e-05 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.002.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_002_joint' type='revolute'>
+      <child>hips_002_link</child>
+      <parent>joint_1_obj_hips_002_link</parent>
+      <axis>
+        <xyz>1 0 -0</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_003_link'>
+      <pose frame=''>5.3e-05 -0.005225 0 -1.79163 -1.57079 -2.92076</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_003_link_visual'>
+        <pose frame=''>-0 -0 0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_003_link_visual_1'>
+        <pose frame=''>-0 -0 0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_003_joint' type='revolute'>
+      <child>joint_1_obj_hips_003_link</child>
+      <parent>hips_002_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_003_link'>
+      <pose frame=''>5.3e-05 -0.005225 0 -0 0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_003_link_collision'>
+        <pose frame=''>-5.1e-05 -0.002903 -6.9e-05 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.003_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_003_link_visual'>
+        <pose frame=''>-5.1e-05 -0.002903 -6.9e-05 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.003.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_003_joint' type='revolute'>
+      <child>hips_003_link</child>
+      <parent>joint_1_obj_hips_003_link</parent>
+      <axis>
+        <xyz>1 0 -0</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_004_link'>
+      <pose frame=''>5.3e-05 -0.009366 0 -1.8424 -1.57079 -2.86998</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_004_link_visual'>
+        <pose frame=''>0 0 0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_004_link_visual_1'>
+        <pose frame=''>0 0 0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_004_joint' type='revolute'>
+      <child>joint_1_obj_hips_004_link</child>
+      <parent>hips_003_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_004_link'>
+      <pose frame=''>5.3e-05 -0.009366 0 -0 0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_004_link_collision'>
+        <pose frame=''>-5.2e-05 -0.002343 -3.8e-05 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.004_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_004_link_visual'>
+        <pose frame=''>-5.2e-05 -0.002343 -3.8e-05 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.004.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_004_joint' type='revolute'>
+      <child>hips_004_link</child>
+      <parent>joint_1_obj_hips_004_link</parent>
+      <axis>
+        <xyz>1 0 -0</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_005_link'>
+      <pose frame=''>5.3e-05 -0.012892 0 -1.86478 -1.57079 -2.8476</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_005_link_visual'>
+        <pose frame=''>0 0 1e-06 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_005_link_visual_1'>
+        <pose frame=''>0 0 1e-06 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_005_joint' type='revolute'>
+      <child>joint_1_obj_hips_005_link</child>
+      <parent>hips_004_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_005_link'>
+      <pose frame=''>5.3e-05 -0.012892 0 -0 0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_005_link_collision'>
+        <pose frame=''>-5.2e-05 -0.00246 -5.9e-05 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.005_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_005_link_visual'>
+        <pose frame=''>-5.2e-05 -0.00246 -5.9e-05 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.005.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_005_joint' type='revolute'>
+      <child>hips_005_link</child>
+      <parent>joint_1_obj_hips_005_link</parent>
+      <axis>
+        <xyz>1 0 -0</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_006_link'>
+      <pose frame=''>5.3e-05 -0.017277 0 -1.87737 -1.57079 -2.83502</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_006_link_visual'>
+        <pose frame=''>0 0 0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_006_link_visual_1'>
+        <pose frame=''>0 0 0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_006_joint' type='revolute'>
+      <child>joint_1_obj_hips_006_link</child>
+      <parent>hips_005_link</parent>
+      <axis>
+        <xyz>1e-06 0 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_006_link'>
+      <pose frame=''>5.3e-05 -0.017277 0 -0 1e-06 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_006_link_collision'>
+        <pose frame=''>-5.2e-05 -0.002207 -7e-06 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.006_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_006_link_visual'>
+        <pose frame=''>-5.2e-05 -0.002207 -7e-06 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.006.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_006_joint' type='revolute'>
+      <child>hips_006_link</child>
+      <parent>joint_1_obj_hips_006_link</parent>
+      <axis>
+        <xyz>1 0 -1e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_007_link'>
+      <pose frame=''>5.3e-05 -0.0211 0 -1.88544 -1.57079 -2.82695</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_007_link_visual'>
+        <pose frame=''>0 0 0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_007_link_visual_1'>
+        <pose frame=''>0 0 0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_007_joint' type='revolute'>
+      <child>joint_1_obj_hips_007_link</child>
+      <parent>hips_006_link</parent>
+      <axis>
+        <xyz>1e-06 0 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_007_link'>
+      <pose frame=''>5.3e-05 -0.0211 0 -0 1e-06 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_007_link_collision'>
+        <pose frame=''>-5.2e-05 -0.002794 2.3e-05 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.007_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_007_link_visual'>
+        <pose frame=''>-5.2e-05 -0.002794 2.3e-05 0 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.007.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_007_joint' type='revolute'>
+      <child>hips_007_link</child>
+      <parent>joint_1_obj_hips_007_link</parent>
+      <axis>
+        <xyz>1 0 -1e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_008_link'>
+      <pose frame=''>5.3e-05 -0.025002 0 -1.89105 -1.57079 -2.82134</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_008_link_visual'>
+        <pose frame=''>0 0 0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_008_link_visual_1'>
+        <pose frame=''>0 0 0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_008_joint' type='revolute'>
+      <child>joint_1_obj_hips_008_link</child>
+      <parent>hips_007_link</parent>
+      <axis>
+        <xyz>1e-06 0 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_008_link'>
+      <pose frame=''>5.3e-05 -0.025002 0 -0 1e-06 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_008_link_collision'>
+        <pose frame=''>-5.2e-05 -0.002621 3e-05 1e-06 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.008_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_008_link_visual'>
+        <pose frame=''>-5.2e-05 -0.002621 3e-05 1e-06 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.008.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_008_joint' type='revolute'>
+      <child>hips_008_link</child>
+      <parent>joint_1_obj_hips_008_link</parent>
+      <axis>
+        <xyz>1 0 -1e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_009_link'>
+      <pose frame=''>5.3e-05 -0.028671 0 -1.89517 -1.57079 -2.81722</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_009_link_visual'>
+        <pose frame=''>-0 0 -0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_009_link_visual_1'>
+        <pose frame=''>-0 0 -0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_009_joint' type='revolute'>
+      <child>joint_1_obj_hips_009_link</child>
+      <parent>hips_008_link</parent>
+      <axis>
+        <xyz>1e-06 0 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_009_link'>
+      <pose frame=''>5.3e-05 -0.028671 0 -0 1e-06 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_009_link_collision'>
+        <pose frame=''>-5.2e-05 -0.002631 2.5e-05 1e-06 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.009_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_009_link_visual'>
+        <pose frame=''>-5.2e-05 -0.002631 2.5e-05 1e-06 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.009.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_009_joint' type='revolute'>
+      <child>hips_009_link</child>
+      <parent>joint_1_obj_hips_009_link</parent>
+      <axis>
+        <xyz>1 0 -1e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_010_link'>
+      <pose frame=''>5.3e-05 -0.03268 -1.7e-05 -1.89833 -1.57079 -2.81405</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_010_link_visual'>
+        <pose frame=''>0 0 0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_010_link_visual_1'>
+        <pose frame=''>0 0 0 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_010_joint' type='revolute'>
+      <child>joint_1_obj_hips_010_link</child>
+      <parent>hips_009_link</parent>
+      <axis>
+        <xyz>1e-06 0 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_010_link'>
+      <pose frame=''>5.3e-05 -0.03268 -1.7e-05 -0 1e-06 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_010_link_collision'>
+        <pose frame=''>-5.2e-05 -0.001895 8.1e-05 1e-06 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.010_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_010_link_visual'>
+        <pose frame=''>-5.2e-05 -0.001895 8.1e-05 1e-06 0 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.010.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_010_joint' type='revolute'>
+      <child>hips_010_link</child>
+      <parent>joint_1_obj_hips_010_link</parent>
+      <axis>
+        <xyz>1 0 -1e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_011_link'>
+      <pose frame=''>5.3e-05 -0.035854 -0.000177 -1.90083 -1.57079 -2.81155</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_011_link_visual'>
+        <pose frame=''>0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_011_link_visual_1'>
+        <pose frame=''>0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_011_joint' type='revolute'>
+      <child>joint_1_obj_hips_011_link</child>
+      <parent>hips_010_link</parent>
+      <axis>
+        <xyz>1e-06 0 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_011_link'>
+      <pose frame=''>5.3e-05 -0.035854 -0.000177 -0 1e-06 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_011_link_collision'>
+        <pose frame=''>-5.9e-05 -0.00206 6.4e-05 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.011_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_011_link_visual'>
+        <pose frame=''>-5.9e-05 -0.00206 6.4e-05 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.011.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_011_joint' type='revolute'>
+      <child>hips_011_link</child>
+      <parent>joint_1_obj_hips_011_link</parent>
+      <axis>
+        <xyz>1 0 -1e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_012_link'>
+      <pose frame=''>5.3e-05 -0.039405 -0.000236 1.23873 -1.57079 0.332069</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_012_link_visual'>
+        <pose frame=''>-0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_012_link_visual_1'>
+        <pose frame=''>-0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_012_joint' type='revolute'>
+      <child>joint_1_obj_hips_012_link</child>
+      <parent>hips_011_link</parent>
+      <axis>
+        <xyz>1e-06 0 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_012_link'>
+      <pose frame=''>5.3e-05 -0.039405 -0.000236 -0 1e-06 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_012_link_collision'>
+        <pose frame=''>3.2e-05 -0.001839 0.000245 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.012_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_012_link_visual'>
+        <pose frame=''>3.2e-05 -0.001839 0.000245 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.012.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_012_joint' type='revolute'>
+      <child>hips_012_link</child>
+      <parent>joint_1_obj_hips_012_link</parent>
+      <axis>
+        <xyz>1 0 -1e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_013_link'>
+      <pose frame=''>5.3e-05 -0.042451 -0.000153 1.23705 -1.57079 0.333746</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_013_link_visual'>
+        <pose frame=''>0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_013_link_visual_1'>
+        <pose frame=''>0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_013_joint' type='revolute'>
+      <child>joint_1_obj_hips_013_link</child>
+      <parent>hips_012_link</parent>
+      <axis>
+        <xyz>1e-06 0 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_013_link'>
+      <pose frame=''>5.3e-05 -0.042451 -0.000153 -1e-06 1e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_013_link_collision'>
+        <pose frame=''>-0.000118 -0.001276 0.000107 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.013_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_013_link_visual'>
+        <pose frame=''>-0.000118 -0.001276 0.000107 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.013.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_013_joint' type='revolute'>
+      <child>hips_013_link</child>
+      <parent>joint_1_obj_hips_013_link</parent>
+      <axis>
+        <xyz>1 1e-06 -1e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_014_link'>
+      <pose frame=''>5.3e-05 -0.045321 -0.000363 1.23564 -1.57079 0.335156</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_014_link_visual'>
+        <pose frame=''>0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_014_link_visual_1'>
+        <pose frame=''>0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_014_joint' type='revolute'>
+      <child>joint_1_obj_hips_014_link</child>
+      <parent>hips_013_link</parent>
+      <axis>
+        <xyz>2e-06 1e-06 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_014_link'>
+      <pose frame=''>5.3e-05 -0.045321 -0.000363 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_014_link_collision'>
+        <pose frame=''>-4.3e-05 -0.00094 3.8e-05 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.014_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_014_link_visual'>
+        <pose frame=''>-4.3e-05 -0.00094 3.8e-05 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.014.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_014_joint' type='revolute'>
+      <child>hips_014_link</child>
+      <parent>joint_1_obj_hips_014_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_015_link'>
+      <pose frame=''>5.3e-05 -0.047999 -0.000315 1.23444 -1.57079 0.336358</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_015_link_visual'>
+        <pose frame=''>0 0 0 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_015_link_visual_1'>
+        <pose frame=''>0 0 0 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_015_joint' type='revolute'>
+      <child>joint_1_obj_hips_015_link</child>
+      <parent>hips_014_link</parent>
+      <axis>
+        <xyz>2e-06 1e-06 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_015_link'>
+      <pose frame=''>5.3e-05 -0.047999 -0.000315 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_015_link_collision'>
+        <pose frame=''>-5.8e-05 -0.0015 0.000204 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.015_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_015_link_visual'>
+        <pose frame=''>-5.8e-05 -0.0015 0.000204 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.015.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_015_joint' type='revolute'>
+      <child>hips_015_link</child>
+      <parent>joint_1_obj_hips_015_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_016_link'>
+      <pose frame=''>5.3e-05 -0.051433 -0.000395 1.2334 -1.57079 0.337395</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_016_link_visual'>
+        <pose frame=''>-0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_016_link_visual_1'>
+        <pose frame=''>-0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_016_joint' type='revolute'>
+      <child>joint_1_obj_hips_016_link</child>
+      <parent>hips_015_link</parent>
+      <axis>
+        <xyz>2e-06 1e-06 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_016_link'>
+      <pose frame=''>5.3e-05 -0.051433 -0.000395 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_016_link_collision'>
+        <pose frame=''>-5.3e-05 -0.001888 0.000187 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.016_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_016_link_visual'>
+        <pose frame=''>-5.3e-05 -0.001888 0.000187 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.016.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_016_joint' type='revolute'>
+      <child>hips_016_link</child>
+      <parent>joint_1_obj_hips_016_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_017_link'>
+      <pose frame=''>5.3e-05 -0.05495 -0.00038 1.2325 -1.57079 0.338298</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_017_link_visual'>
+        <pose frame=''>-0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_017_link_visual_1'>
+        <pose frame=''>-0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_017_joint' type='revolute'>
+      <child>joint_1_obj_hips_017_link</child>
+      <parent>hips_016_link</parent>
+      <axis>
+        <xyz>2e-06 1e-06 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_017_link'>
+      <pose frame=''>5.3e-05 -0.05495 -0.00038 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_017_link_collision'>
+        <pose frame=''>-5.3e-05 -0.002154 0.000132 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.017_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_017_link_visual'>
+        <pose frame=''>-5.3e-05 -0.002154 0.000132 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.017.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_017_joint' type='revolute'>
+      <child>hips_017_link</child>
+      <parent>joint_1_obj_hips_017_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_018_link'>
+      <pose frame=''>5.3e-05 -0.059073 -0.00038 1.2317 -1.57079 0.339093</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_018_link_visual'>
+        <pose frame=''>0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_018_link_visual_1'>
+        <pose frame=''>0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_018_joint' type='revolute'>
+      <child>joint_1_obj_hips_018_link</child>
+      <parent>hips_017_link</parent>
+      <axis>
+        <xyz>2e-06 1e-06 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_018_link'>
+      <pose frame=''>5.3e-05 -0.059073 -0.00038 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_018_link_collision'>
+        <pose frame=''>-5.3e-05 -0.002016 0.000247 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.018_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_018_link_visual'>
+        <pose frame=''>-5.3e-05 -0.002016 0.000247 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.018.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_018_joint' type='revolute'>
+      <child>hips_018_link</child>
+      <parent>joint_1_obj_hips_018_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_019_link'>
+      <pose frame=''>5.3e-05 -0.062823 -0.000427 1.231 -1.57079 0.339797</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_019_link_visual'>
+        <pose frame=''>-0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_019_link_visual_1'>
+        <pose frame=''>-0 0 1e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_019_joint' type='revolute'>
+      <child>joint_1_obj_hips_019_link</child>
+      <parent>hips_018_link</parent>
+      <axis>
+        <xyz>2e-06 1e-06 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_019_link'>
+      <pose frame=''>5.3e-05 -0.062824 -0.000427 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_019_link_collision'>
+        <pose frame=''>-5.3e-05 -0.001972 0.000139 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.019_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_019_link_visual'>
+        <pose frame=''>-5.3e-05 -0.001972 0.000139 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.019.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_019_joint' type='revolute'>
+      <child>hips_019_link</child>
+      <parent>joint_1_obj_hips_019_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_020_link'>
+      <pose frame=''>5.3e-05 -0.066624 -0.000483 1.23037 -1.57079 0.340425</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_020_link_visual'>
+        <pose frame=''>-0 0 2e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_020_link_visual_1'>
+        <pose frame=''>-0 0 2e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_020_joint' type='revolute'>
+      <child>joint_1_obj_hips_020_link</child>
+      <parent>hips_019_link</parent>
+      <axis>
+        <xyz>2e-06 1e-06 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_020_link'>
+      <pose frame=''>5.3e-05 -0.066624 -0.000483 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_020_link_collision'>
+        <pose frame=''>-5.3e-05 -0.002134 0.000251 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.020_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_020_link_visual'>
+        <pose frame=''>-5.3e-05 -0.002134 0.000251 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.020.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_020_joint' type='revolute'>
+      <child>hips_020_link</child>
+      <parent>joint_1_obj_hips_020_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='joint_1_obj_hips_021_link'>
+      <pose frame=''>5.3e-05 -0.071028 -0.000216 1.22981 -1.57079 0.340989</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <visual name='joint_1_obj_hips_021_link_visual'>
+        <pose frame=''>-0 0 2e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+      <visual name='joint_1_obj_hips_021_link_visual_1'>
+        <pose frame=''>-0 0 2e-06 -1.5708 -1e-06 -1.5708</pose>
+        <geometry>
+          <empty />
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_1_obj_hips_021_joint' type='revolute'>
+      <child>joint_1_obj_hips_021_link</child>
+      <parent>hips_020_link</parent>
+      <axis>
+        <xyz>2e-06 1e-06 1</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_021_link'>
+      <pose frame=''>5.3e-05 -0.071028 -0.000216 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_021_link_collision'>
+        <pose frame=''>-5.2e-05 -0.004422 0.002639 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips.021_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_021_link_visual'>
+        <pose frame=''>-5.2e-05 -0.004422 0.002639 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.021.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_021_joint' type='revolute'>
+      <child>hips_021_link</child>
+      <parent>joint_1_obj_hips_021_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.261799</lower>
+          <upper>0.261799</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='hips_link'>
+      <pose frame=''>5.3e-05 -0.07861 0.00538 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='hips_link_collision'>
+        <pose frame=''>-1.1e-05 -0.002312 0.001123 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_hips_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hips_link_visual'>
+        <pose frame=''>-1.1e-05 -0.002312 0.001123 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_hips.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hips_joint' type='revolute'>
+      <child>hips_link</child>
+      <parent>hips_021_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>0.523599</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='spine_link'>
+      <pose frame=''>5.3e-05 -0.084802 0.012973 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='spine_link_collision'>
+        <pose frame=''>-0.000114 -0.010193 0.005409 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_spine_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='spine_link_visual'>
+        <pose frame=''>-0.000114 -0.010193 0.005409 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_spine.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='spine_joint' type='revolute'>
+      <child>spine_link</child>
+      <parent>hips_link</parent>
+      <!--
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+       -->
+    </joint>
+    <link name='chest_link'>
+      <pose frame=''>5.3e-05 -0.104021 0.014157 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='chest_link_collision'>
+        <pose frame=''>3.1e-05 -0.009587 0.003201 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_chest_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='chest_link_visual'>
+        <pose frame=''>3.1e-05 -0.009587 0.003201 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_chest.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='chest_joint' type='revolute'>
+      <child>chest_link</child>
+      <parent>spine_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='neck_link'>
+      <pose frame=''>5.3e-05 -0.125819 0.013035 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='neck_link_collision'>
+        <pose frame=''>-5.5e-05 -0.007086 -0.008498 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_neck_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='neck_link_visual'>
+        <pose frame=''>-5.5e-05 -0.007086 -0.008498 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_neck.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='neck_joint' type='revolute'>
+      <sensor name="neck_sensor" type="force_torque"><force_torque></force_torque></sensor>
+      <child>neck_link</child>
+      <parent>chest_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <!-- we should set sane limits here, the default for all joints is a fixed position that
+             cannot be changed (lower and upper = 0, so it is disabled now since we want to move
+             the neck joint
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        -->
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <provide_feedback>true</provide_feedback>
+      </physics>
+    </joint>
+    <link name='head_link'>
+      <pose frame=''>5.3e-05 -0.138308 0.008383 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='head_link_collision'>
+        <pose frame=''>-8.8e-05 -0.008181 0.001909 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_head_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='head_link_visual'>
+        <pose frame=''>-8.8e-05 -0.008181 0.001909 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_head.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name='cam_left_eye' type='camera'>
+        <always_on>1</always_on>
+        <update_rate>10</update_rate>
+        <visualize>1</visualize>
+        <pose frame='head_link'>0.005 -0.004 0.005 0 0 -1.39</pose>
+        <topic>/mouse_left_eye/mouse/left_eye</topic>
+        <camera>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.015</near>
+            <far>6</far>
+          </clip>
+        </camera>
+        <plugin name="mouse_left_eye" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>30.0</updateRate>
+          <cameraName>mouse_left_eye</cameraName>
+          <imageTopicName>mouse/left_eye</imageTopicName>
+          <cameraInfoTopicName>mouse/left_eye_info</cameraInfoTopicName>
+          <frameName>base_link</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
+      </sensor>
+      <sensor name='cam_right_eye' type='camera'>
+        <always_on>1</always_on>
+        <update_rate>10</update_rate>
+        <visualize>1</visualize>
+        <pose frame='head_link'>-0.005 -0.004 0.005 0 0 -1.78</pose>
+        <topic>/mouse_right_eye/mouse/right_eye</topic>
+        <camera>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.015</near>
+            <far>6</far>
+          </clip>
+        </camera>
+        <plugin name="mouse_right_eye" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>30.0</updateRate>
+          <cameraName>mouse_right_eye</cameraName>
+          <imageTopicName>mouse/right_eye</imageTopicName>
+          <cameraInfoTopicName>mouse/right_eye_info</cameraInfoTopicName>
+          <frameName>base_link</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
+      </sensor>
+    </link>
+    <joint name='head_joint' type='revolute'>
+      <child>head_link</child>
+      <parent>neck_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='nose_link'>
+      <pose frame=''>5.3e-05 -0.150003 0.009317 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='nose_link_collision'>
+        <pose frame=''>-8e-06 -0.002653 -0.000103 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_nose_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='nose_link_visual'>
+        <pose frame=''>-8e-06 -0.002653 -0.000103 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_nose.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='nose_joint' type='revolute'>
+      <child>nose_link</child>
+      <parent>head_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='mouth_link'>
+      <pose frame=''>5.3e-05 -0.138308 0.008383 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='mouth_link_collision'>
+        <pose frame=''>-7e-06 -0.004593 -0.004713 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_mouth_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='mouth_link_visual'>
+        <pose frame=''>-7e-06 -0.004593 -0.004713 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_mouth.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='mouth_joint' type='revolute'>
+      <child>mouth_link</child>
+      <parent>neck_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='neck_001_link'>
+      <pose frame=''>5.3e-05 -0.138308 0.008383 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='neck_001_link_collision'>
+        <pose frame=''>-0.005722 0.002351 0.005859 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_neck.001_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='neck_001_link_visual'>
+        <pose frame=''>-0.005722 0.002351 0.005859 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_neck.001.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='neck_001_joint' type='revolute'>
+      <child>neck_001_link</child>
+      <parent>neck_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='neck_002_link'>
+      <pose frame=''>5.3e-05 -0.138308 0.008383 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='neck_002_link_collision'>
+        <pose frame=''>0.005777 0.002502 0.005767 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_neck.002_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='neck_002_link_visual'>
+        <pose frame=''>0.005777 0.002502 0.005767 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_neck.002.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='neck_002_joint' type='revolute'>
+      <child>neck_002_link</child>
+      <parent>neck_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='shoulder_L_link'>
+      <pose frame=''>5.3e-05 -0.125819 0.013035 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='shoulder_L_link_collision'>
+        <pose frame=''>0.005471 -0.000612 0.003779 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_shoulder.L_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='shoulder_L_link_visual'>
+        <pose frame=''>0.005471 -0.000612 0.003779 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_shoulder.L.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='shoulder_L_joint' type='revolute'>
+      <child>shoulder_L_link</child>
+      <parent>chest_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='upper_arm_L_link'>
+      <pose frame=''>0.007406 -0.129168 0.009404 -1e-06 -0.191984 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='upper_arm_L_link_collision'>
+        <pose frame=''>0.002145 0.006057 -0.003048 1e-06 0.191987 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_upper_arm.L_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='upper_arm_L_link_visual'>
+        <pose frame=''>0.002145 0.006057 -0.003048 1e-06 0.191987 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_upper_arm.L.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='upper_arm_L_joint' type='revolute'>
+      <child>upper_arm_L_link</child>
+      <parent>shoulder_L_link</parent>
+      <axis>
+        <xyz>0.981628 1e-06 0.190807</xyz>
+        <limit>
+          <lower>-0.610865</lower>
+          <upper>0.523599</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='forearm_L_link'>
+      <pose frame=''>0.009446 -0.11477 0.001452 -1e-06 -0.191984 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='forearm_L_link_collision'>
+        <pose frame=''>-0.000895 -0.006747 -0.003354 1e-06 0.191987 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_forearm.L_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='forearm_L_link_visual'>
+        <pose frame=''>-0.000895 -0.006747 -0.003354 1e-06 0.191987 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_forearm.L.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='forearm_L_joint' type='revolute'>
+      <child>forearm_L_link</child>
+      <parent>upper_arm_L_link</parent>
+      <axis>
+        <xyz>0.981628 1e-06 0.190807</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>1.39626</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='wrist_L_link'>
+      <pose frame=''>0.011464 -0.129985 -0.005493 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='wrist_L_link_collision'>
+        <pose frame=''>7.8e-05 -0.001088 4.4e-05 1e-06 1e-06 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_wrist.L_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='wrist_L_link_visual'>
+        <pose frame=''>7.8e-05 -0.001088 4.4e-05 1e-06 1e-06 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_wrist.L.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='wrist_L_joint' type='revolute'>
+      <child>wrist_L_link</child>
+      <parent>forearm_L_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.610865</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='shoulder_R_link'>
+      <pose frame=''>5.3e-05 -0.125819 0.013035 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='shoulder_R_link_collision'>
+        <pose frame=''>-0.005066 -0.000772 0.003967 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_shoulder.R_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='shoulder_R_link_visual'>
+        <pose frame=''>-0.005066 -0.000772 0.003967 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_shoulder.R.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='shoulder_R_joint' type='revolute'>
+      <child>shoulder_R_link</child>
+      <parent>chest_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='upper_arm_R_link'>
+      <pose frame=''>-0.007301 -0.129168 0.009405 -1e-06 0.191989 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='upper_arm_R_link_collision'>
+        <pose frame=''>-0.002183 0.005941 -0.003031 1e-06 -0.191986 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_upper_arm.R_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='upper_arm_R_link_visual'>
+        <pose frame=''>-0.002183 0.005941 -0.003031 1e-06 -0.191986 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_upper_arm.R.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='upper_arm_R_joint' type='revolute'>
+      <child>upper_arm_R_link</child>
+      <parent>shoulder_R_link</parent>
+      <axis>
+        <xyz>0.981627 1e-06 -0.190811</xyz>
+        <limit>
+          <lower>-0.610865</lower>
+          <upper>0.523599</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='forearm_R_link'>
+      <pose frame=''>-0.009341 -0.11477 0.001453 -1e-06 0.191989 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='forearm_R_link_collision'>
+        <pose frame=''>0.000779 -0.006723 -0.003367 2e-06 -0.191986 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_forearm.R_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='forearm_R_link_visual'>
+        <pose frame=''>0.000779 -0.006723 -0.003367 2e-06 -0.191986 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_forearm.R.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='forearm_R_joint' type='revolute'>
+      <child>forearm_R_link</child>
+      <parent>upper_arm_R_link</parent>
+      <axis>
+        <xyz>0.981627 1e-06 -0.190811</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>1.39626</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='wrist_R_link'>
+      <pose frame=''>-0.011358 -0.129985 -0.005493 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='wrist_R_link_collision'>
+        <pose frame=''>-0.000165 -0.001092 2e-06 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_wrist.R_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='wrist_R_link_visual'>
+        <pose frame=''>-0.000165 -0.001092 2e-06 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_wrist.R.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='wrist_R_joint' type='revolute'>
+      <child>wrist_R_link</child>
+      <parent>forearm_R_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.610865</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='spine_001_link'>
+      <pose frame=''>5.1e-05 -0.115386 -0.001683 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='spine_001_link_collision'>
+        <pose frame=''>-5.3e-05 0.012418 -0.001199 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_spine.001_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='spine_001_link_visual'>
+        <pose frame=''>-5.3e-05 0.012418 -0.001199 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_spine.001.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='spine_001_joint' type='revolute'>
+      <child>spine_001_link</child>
+      <parent>spine_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='thigh_L_link'>
+      <pose frame=''>0.009178 -0.086258 0.010475 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_L_link_collision'>
+        <pose frame=''>0.001359 -0.00843 -0.002303 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_thigh.L_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_L_link_visual'>
+        <pose frame=''>0.001359 -0.00843 -0.002303 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_thigh.L.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='thigh_L_joint' type='revolute'>
+      <child>thigh_L_link</child>
+      <parent>hips_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>0.523599</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='shin_L_link'>
+      <pose frame=''>0.010341 -0.100876 0.005552 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='shin_L_link_collision'>
+        <pose frame=''>-0.000663 0.009381 -0.006255 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_shin.L_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='shin_L_link_visual'>
+        <pose frame=''>-0.000663 0.009381 -0.006255 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_shin.L.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='shin_L_joint' type='revolute'>
+      <child>shin_L_link</child>
+      <parent>thigh_L_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.349066</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='shin_lower_L_link'>
+      <pose frame=''>0.010803 -0.087557 -0.005332 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='shin_lower_L_link_collision'>
+        <pose frame=''>0.000457 -0.007472 -0.000436 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_shin_lower.L_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='shin_lower_L_link_visual'>
+        <pose frame=''>0.000457 -0.007472 -0.000436 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_shin_lower.L.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='shin_lower_L_joint' type='revolute'>
+      <child>shin_lower_L_link</child>
+      <parent>shin_L_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>2.0944</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='thigh_R_link'>
+      <pose frame=''>-0.009136 -0.086258 0.010475 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_R_link_collision'>
+        <pose frame=''>-0.001385 -0.008383 -0.002328 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_thigh.R_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='thigh_R_link_visual'>
+        <pose frame=''>-0.001385 -0.008383 -0.002328 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_thigh.R.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='thigh_R_joint' type='revolute'>
+      <child>thigh_R_link</child>
+      <parent>hips_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>0.523599</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='shin_R_link'>
+      <pose frame=''>-0.010324 -0.100876 0.005552 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='shin_R_link_collision'>
+        <pose frame=''>0.000645 0.009378 -0.006253 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_shin.R_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='shin_R_link_visual'>
+        <pose frame=''>0.000645 0.009378 -0.006253 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_shin.R.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='shin_R_joint' type='revolute'>
+      <child>shin_R_link</child>
+      <parent>thigh_R_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.349066</lower>
+          <upper>1.5708</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='shin_lower_R_link'>
+      <pose frame=''>-0.010865 -0.087557 -0.005332 -1e-06 2e-06 1e-06</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name='shin_lower_R_link_collision'>
+        <pose frame=''>-0.000391 -0.007466 -0.000433 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/collisions/COL_obj_shin_lower.R_convex_hull.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='shin_lower_R_link_visual'>
+        <pose frame=''>-0.000391 -0.007466 -0.000433 1e-06 0 -1e-06</pose>
+        <geometry>
+          <mesh>
+            <scale>0.05 0.05 0.05</scale>
+            <uri>model://mouse_v2_model/meshes/obj_shin_lower.R.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='shin_lower_R_joint' type='revolute'>
+      <child>shin_lower_R_link</child>
+      <parent>shin_R_link</parent>
+      <axis>
+        <xyz>1 1e-06 -2e-06</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>2.0944</upper>
+          <effort>100</effort>
+          <velocity>1</velocity>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <!-- fix the mouse model paws to the world for now, since we don't have dynamic controllers 
+         for the limbs, moving the neck can cause the whole model to shift, which causes the 
+         visual animated frontend version to diverge from the true position. -->
+    <joint name='wrist_L_fixed_to_world' type='revolute'>
+      <child>wrist_L_link</child>
+      <parent>world</parent>
+    </joint>
+    <joint name='wrist_R_fixed_to_world' type='revolute'>
+      <child>wrist_R_link</child>
+      <parent>world</parent>
+    </joint>
+    <joint name='shin_lower_L_fixed_to_world' type='revolute'>
+      <child>shin_lower_L_link</child>
+      <parent>world</parent>
+    </joint>
+    <joint name='shin_lower_R_fixed_to_world' type='revolute'>
+      <child>shin_lower_R_link</child>
+      <parent>world</parent>
+    </joint>
+    <static>false</static>
+    <self_collide>false</self_collide>
+    <plugin name='generic_controller' filename='libgeneric_controller_plugin.so'>
+      <controller joint_name='joint_1_obj_hips_002_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_002_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_003_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_003_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_004_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_004_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_005_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_005_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_006_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_006_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_007_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_007_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_008_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_008_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_009_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_009_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_010_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_010_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_011_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_011_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_012_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_012_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_013_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_013_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_014_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_014_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_015_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_015_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_016_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_016_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_017_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_017_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_018_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_018_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_019_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_019_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_020_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_020_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='joint_1_obj_hips_021_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_021_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='hips_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='spine_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='chest_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='neck_joint'>
+        <type>position</type>
+        <pid>2.3 0.0 18.0</pid>
+      </controller>
+      <visual joint_name="neck_joint">
+        <joint_name>neck</joint_name>
+        <joint_axis>1 0 0</joint_axis>
+      </visual>
+      <controller joint_name='head_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='nose_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='mouth_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='neck_001_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='neck_002_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='shoulder_L_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='upper_arm_L_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='forearm_L_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='wrist_L_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='shoulder_R_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='upper_arm_R_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='forearm_R_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='wrist_R_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='spine_001_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='thigh_L_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='shin_L_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='shin_lower_L_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='thigh_R_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='shin_R_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+      <controller joint_name='shin_lower_R_joint'>
+        <type>position</type>
+        <pid>100 1 1</pid>
+      </controller>
+    </plugin>
+  </model>
+</sdf>

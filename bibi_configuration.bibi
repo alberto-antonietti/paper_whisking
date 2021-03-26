@@ -1,0 +1,20 @@
+<ns1:bibi 
+  xmlns:ns1="http://schemas.humanbrainproject.eu/SP10/2014/BIBI" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ns1:brainModel>
+    <ns1:file>brain.py</ns1:file>
+  </ns1:brainModel>
+  <ns1:bodyModel robotId="mouse">model.sdf</ns1:bodyModel>
+  <ns1:transferFunction src="spike_monitor.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
+  <ns1:transferFunction src="shelf_contact.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
+  <ns1:transferFunction src="phase_detection.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
+  <ns1:transferFunction src="pattern_generator.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
+  <ns1:transferFunction src="head_up.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
+  <ns1:transferFunction src="follicle_sensors.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
+  <ns1:transferFunction src="follicle_muscle.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
+  <ns1:transferFunction src="csv_weight_monitor.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
+  <ns1:transferFunction src="csv_spike_monitor.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
+  <ns1:transferFunction src="csv_rate_monitor.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
+  <ns1:transferFunction src="csv_pfpc_monitor.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
+  <ns1:transferFunction src="csv_joint_state_monitor.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
+</ns1:bibi>
