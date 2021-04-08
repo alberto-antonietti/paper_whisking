@@ -1,4 +1,5 @@
 from hbp_nrp_cle.brainsim import simulator as sim
+from pyNN.random import RandomDistribution
 
 import logging
 
@@ -277,6 +278,7 @@ def create_brain():
     #                   'tau_facil': 1.0}
 
     cell_class = sim.IF_cond_alpha(**SENSORPARAMS)
+    #bigcell_class = sim.IF_cond_alpha(**BIGCELPARAMS)
 
     # ~100 neurons per follicle (McElvain 2018)
     n_whisks = 4
@@ -285,8 +287,9 @@ def create_brain():
     # Populations
     #
     MF_pop, GR_pop, PC_pop, IO_pop, DCN_pop, PFPC_conn = create_cereb()
+    
 
-    def population(size):
+    def population(size, cell_class=cell_class):
         return sim.Population(size=size, cellclass=cell_class)
 
     # CPG
@@ -331,8 +334,9 @@ def create_brain():
 
     # CPG ---------> protractors
     # CPG -[delay]-> retractors
-    sim.Projection(cpg, fn_pro, all_to_all, static_syn(1.0))
-    sim.Projection(cpg, fn_ret, all_to_all, static_syn(1.0, 50.0))
+    random_weights = RandomDistribution('uniform', low=0.0, high=0.0001)
+    sim.Projection(cpg, fn_pro, all_to_all, static_syn(random_weights))
+    sim.Projection(cpg, fn_ret, all_to_all, static_syn(random_weights, 50.0))
 
     # Disynaptic reflex: tg_ct --> tn_ct --> fn_moto
     # tg_ct --> tn_ct
@@ -350,14 +354,14 @@ def create_brain():
     sim.Projection(tn_phase, MF_pop, to_one, static_syn(1.0))
 
     # Protractors activation
-    syn = sim.StaticSynapse(weight=0.1, delay=7.5)
+    syn = sim.StaticSynapse(weight=1.0, delay=7.5)
     for i in range(n_whisks):
         begin = i*20
         end = (i+1)*20
         sim.Projection(tn_ct[i:i+1], fn_pro[begin:end], all_to_all, syn)
 
     # Retractors inhibition
-    syn = sim.StaticSynapse(weight=-0.1, delay=7.5)
+    syn = sim.StaticSynapse(weight=-1.0, delay=7.5)
     sim.Projection(tn_ct[:2], fn_ret[:20], all_to_all, syn)
     sim.Projection(tn_ct[2:], fn_ret[20:], all_to_all, syn)
     #
