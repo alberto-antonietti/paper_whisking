@@ -1,3 +1,16 @@
+import hbp_nrp_cle.tf_framework as nrp
+from hbp_nrp_cle.robotsim.RobotInterface import Topic
+import std_msgs.msg
+# import numpy as np
+from hbp_nrp_excontrol.logs import clientLogger
+from sensor_msgs.msg import JointState
+
+
+@nrp.MapCSVRecorder("recorder", filename="events.csv",
+                    headers=["type", "time", "event"])
+@nrp.MapVariable('state', initial_value='rest')
+@nrp.MapRobotSubscriber("joint_states",
+                        Topic("/mouse/joint_states", JointState))
 @nrp.MapSpikeSink("dcn", nrp.brain.dcn, nrp.population_rate)
 @nrp.MapSpikeSink("rise_head", nrp.brain.rise_head, nrp.population_rate)
 @nrp.MapSpikeSink("head_contact", nrp.brain.head_contact, nrp.population_rate)

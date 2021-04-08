@@ -2,8 +2,8 @@
   "camera": {
     "defaultMode": "free-camera",
     "sensitivity": {
-      "translation": 1,
-      "rotation": 1
+      "translation": 0.1,
+      "rotation": 0.1
     }
   },
   "workspaces": {
@@ -45,11 +45,11 @@
       "content": [
         {
           "type": "stack",
-          "width": 100,
+          "width": 99.99999999999999,
           "isClosable": true,
           "reorderEnabled": true,
           "title": "",
-          "activeItemIndex": 0,
+          "activeItemIndex": 2,
           "height": 100,
           "content": [
             {
@@ -85,21 +85,6 @@
             },
             {
               "type": "component",
-              "title": "Log Console",
-              "id": "log-console",
-              "componentName": "angularModuleComponent",
-              "componentState": {
-                "module": "exdFrontendApp",
-                "angularDirective": "<log-console />",
-                "singleton": true
-              },
-              "pwidth": 400,
-              "pheight": 300,
-              "isClosable": true,
-              "reorderEnabled": true
-            },
-            {
-              "type": "component",
               "title": "TF Editor",
               "id": "transfer-function-editor",
               "componentName": "angularModuleComponent",
@@ -112,6 +97,51 @@
               "pheight": 700,
               "isClosable": true,
               "reorderEnabled": true
+            },
+            {
+              "type": "component",
+              "title": "Brain Editor",
+              "id": "pynn-editor",
+              "componentName": "angularModuleComponent",
+              "componentState": {
+                "module": "exdFrontendApp",
+                "angularDirective": "<pynn-editor />",
+                "singleton": true
+              },
+              "pwidth": 800,
+              "pheight": 900,
+              "isClosable": true,
+              "reorderEnabled": true
+            },
+            {
+              "type": "component",
+              "title": "Smach Editor",
+              "id": "smach-editor",
+              "componentName": "angularModuleComponent",
+              "componentState": {
+                "module": "exdFrontendApp",
+                "angularDirective": "<smach-editor />",
+                "singleton": true
+              },
+              "pwidth": 800,
+              "pheight": 900,
+              "isClosable": true,
+              "reorderEnabled": true
+            },
+            {
+              "type": "component",
+              "title": "Log Console",
+              "id": "log-console",
+              "componentName": "angularModuleComponent",
+              "componentState": {
+                "module": "exdFrontendApp",
+                "angularDirective": "<log-console />",
+                "singleton": true
+              },
+              "pwidth": 400,
+              "pheight": 300,
+              "isClosable": true,
+              "reorderEnabled": true
             }
           ]
         }
@@ -119,6 +149,7 @@
       "isClosable": true,
       "reorderEnabled": true,
       "title": "",
+      "width": 66.66666666666667,
       "openPopouts": [],
       "maximisedItemId": null
     }

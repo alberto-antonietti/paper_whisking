@@ -1,3 +1,24 @@
+import hbp_nrp_cle.tf_framework as nrp
+from gazebo_msgs.srv import ApplyJointEffort
+from rospy import ServiceProxy, wait_for_service
+# from rospy import Duration
+from hbp_nrp_excontrol.logs import clientLogger
+
+
+clientLogger.info('Waiting for ROS Service /gazebo/apply_joint_effort')
+wait_for_service('/gazebo/apply_joint_effort')
+clientLogger.info('Found ROS Service /gazebo/apply_joint_effort')
+service_proxy = ServiceProxy('/gazebo/apply_joint_effort',
+                             ApplyJointEffort, persistent=True)
+
+n_whisks = 4
+
+
+@nrp.MapVariable("proxy", initial_value=service_proxy)
+@nrp.MapSpikeSink("fn_moto",
+                  nrp.map_neurons(range(n_whisks*20 + 2*20),
+                                  lambda i: nrp.brain.fn_moto[i]),
+                  nrp.spike_recorder)
 @nrp.Neuron2Robot()
 def follicle_muscle(t, proxy, fn_moto):
     from rospy import Duration

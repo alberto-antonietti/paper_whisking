@@ -1,3 +1,35 @@
+import hbp_nrp_cle.tf_framework as nrp
+import numpy as np
+from hbp_nrp_excontrol.logs import clientLogger
+from sensor_msgs.msg import JointState
+from gazebo_msgs.msg import LinkStates
+# from gazebo_ros_muscle_interface.msg import MuscleStates  # Can we use it?
+from gazebo_msgs.msg import ContactsState
+from hbp_nrp_cle.robotsim.RobotInterface import Topic
+
+
+# TODO:
+# get population sizes from a .json file?
+# (NOT .py module (modules will be cached))
+w_per_side = 2  # whiskers per side
+tg_size = 2*100*w_per_side
+
+
+w_data = {'L': [{'contact': False, 'ang': 0.0, 'vel': 0.0}]*w_per_side,
+          'R': [{'contact': False, 'ang': 0.0, 'vel': 0.0}]*w_per_side}
+
+
+@nrp.MapVariable("w_data", initial_value=w_data)
+@nrp.MapRobotSubscriber("joint_states",
+                        Topic("/mouse/joint_states", JointState))
+@nrp.MapRobotSubscriber("link_states",
+                        Topic("/gazebo/link_states", LinkStates))
+@nrp.MapRobotSubscriber("contact_point_data",
+                        Topic("/gazebo/contact_point_data", ContactsState))
+@nrp.MapSpikeSource("tg_ganglion",
+                    nrp.map_neurons(range(tg_size),
+                                    lambda i: nrp.brain.tg_ganglion[i]),
+                    nrp.poisson, delay=1.0)
 @nrp.Robot2Neuron()
 def follicle_sensors(t,
                      w_data, joint_states, link_states, contact_point_data,

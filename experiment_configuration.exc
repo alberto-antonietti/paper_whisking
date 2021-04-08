@@ -1,19 +1,24 @@
-<ExD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig" xsi:schemaLocation="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig ../ExDConfFile.xsd">
+<ExD 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig" xsi:schemaLocation="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig ../ExDConfFile.xsd">
   <name>1- Whisking experiment</name>
   <thumbnail>WhiskerMouse.jpg</thumbnail>
   <description>Whisking experiment</description>
   <tags>empty template mouse docked biological</tags>
   <timeout>360000</timeout>
-  <configuration type="brainvisualizer" src="brainvisualizer.json"/>
-  <configuration type="user-interaction-settings" src="user-settings.uis"/>
+  <configuration type="brainvisualizer" src="brainvisualizer.json" />
+  <configuration type="user-interaction-settings" src="user-settings.uis" />
   <maturity>production</maturity>
   <environmentModel src="world.sdf">
-    <robotPose robotId="mouse" x="0.0" y="0.1" z="1.0" roll="0.0" pitch="0.0" yaw="0.0"/>
+    <robotPose robotId="mouse" x="0.0" y="0.1" z="1.0" roll="0.0" pitch="0.0" yaw="0.0" />
   </environmentModel>
-  <bibiConf src="bibi_configuration.bibi"/>
+  <bibiConf src="bibi_configuration.bibi" />
   <cameraPose>
-    <cameraPosition x="0.2" y="0" z="1.07"/>
-    <cameraLookAt x="0" y="0" z="1.0"/>
+    <cameraPosition x="0.2" y="0" z="1.07" />
+    <cameraLookAt x="0" y="0" z="1.0" />
   </cameraPose>
   <cloneDate>2020-01-15T08:16:03</cloneDate>
+  <experimentControl>
+    <stateMachine id="statemachine_0_1617875249655_frontend_generated" src="statemachine_0_1617875249655_frontend_generated.exd" xsi:type="SMACHStateMachine" />
+  </experimentControl>
 </ExD>

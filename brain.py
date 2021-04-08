@@ -1,23 +1,24 @@
-# -*- coding: utf-8 -*-
-"""
-"""
-# pragma: no cover
-
-__author__ = ''
-
 from hbp_nrp_cle.brainsim import simulator as sim
-# import numpy as np
-from hbp_nrp_excontrol.logs import clientLogger
+
 import logging
+
+__author__ = 'Alberto Antonietti, Edoardo Negri'
 
 logger = logging.getLogger(__name__)
 
 try:
-    sim.nest.Install("albertomodule")
-    clientLogger.info("Albertomodule installed correctly")
+    sim.nest.Install("cerebmodule")
+    logger.info("cerebmodule installed correctly")
 except Exception as e:  # DynamicModuleManagementError
-    clientLogger.info(e)
-    clientLogger.info("Albertomodule already installed")
+    logger.info(e)
+    logger.info("cerebmodule already installed")
+    
+CORES = 4
+sim.nest.ResetKernel()
+sim.nest.SetKernelStatus({'local_num_threads' : CORES,
+                      'total_num_virtual_procs' : CORES,
+                      'resolution' : 1.0,
+                      'overwrite_files' : True})
 
 # CEREBELLUM
 PLAST1 = True   # PF-PC ex
@@ -88,7 +89,7 @@ def create_cereb():
     GR_num = MF_num*20
     PC_num = 72
     IO_num = PC_num
-    DCN_num = PC_num/2
+    DCN_num = int(PC_num/2)
 
     MF_pop = sim.create(sim.native_cell_type("parrot_neuron"), {}, MF_num)
     GR_pop = sim.create(sim.native_cell_type("granular_neuron"), {}, GR_num)
@@ -103,11 +104,11 @@ def create_cereb():
     IO = tuple(IO_pop.all_cells)
     DCN = tuple(DCN_pop.all_cells)
 
-    clientLogger.info('MF:', min(MF), max(MF))
-    clientLogger.info('GR:', min(GR), max(GR))
-    clientLogger.info('PC:', min(PC), max(PC))
-    clientLogger.info('IO:', min(IO), max(IO))
-    clientLogger.info('DCN:', min(DCN), max(DCN))
+    logger.info(f"MF: {min(MF)}, {max(MF)}")
+    logger.info(f"GR: {min(GR)}, {max(GR)}")
+    logger.info(f"PC: {min(PC)}, {max(PC)}")
+    logger.info(f"IO: {min(IO)}, {max(IO)}")
+    logger.info(f"DCN: {min(DCN)}, {max(DCN)}")
 
     if PLAST1:
         vt = sim.nest.Create("volume_transmitter_alberto", PC_num)
@@ -181,7 +182,7 @@ def create_cereb():
                               "multapses": False},
                              PFPC_conn_param)
             A = sim.nest.GetConnections(GR, [PCi])
-            sim.nest.SetStatus(A, {'vt_num': i})
+            sim.nest.SetStatus(A, {'vt_num': float(i)})
     else:
         PFPC_conn_param = {"model":  "static_synapse",
                            "weight": Init_PFPC,
@@ -253,8 +254,8 @@ def create_brain():
     """
     Initializes PyNN with the neuronal network that has to be simulated
     """
-    sim.setup(timestep=0.1, min_delay=0.1, max_delay=100.0,
-              threads=1, rng_seeds=[1234])
+    #sim.setup(timestep=0.1, min_delay=0.1, max_delay=100.0,
+    #          threads=1, rng_seeds=[1234])
 
     # Parameters were taken from the husky braitenberg brain experiment
 
@@ -303,11 +304,12 @@ def create_brain():
     tg_ht = population(tg_pop_size)
     tg_ws = population(tg_pop_size)
 
-    clientLogger.info('tg_pr:', min(tg_pr), max(tg_pr)+1)
-    clientLogger.info('tg_ct:', min(tg_ct), max(tg_ct)+1)
-    clientLogger.info('tg_dt:', min(tg_dt), max(tg_dt)+1)
-    clientLogger.info('tg_ht:', min(tg_ht), max(tg_ht)+1)
-    clientLogger.info('tg_ws:', min(tg_ws), max(tg_ws)+1)
+    
+    logger.info(f"tg_pr: {min(tg_pr)}, {max(tg_pr)}")
+    logger.info(f"tg_ct: {min(tg_ct)}, {max(tg_ct)}")
+    logger.info(f"tg_dt: {min(tg_dt)}, {max(tg_dt)}")
+    logger.info(f"tg_ht: {min(tg_ht)}, {max(tg_ht)}")
+    logger.info(f"tg_ws: {min(tg_ws)}, {max(tg_ws)}")
 
     # Trigeminal Nucleus interneurons
     tn_ct = population(n_whisks)
@@ -324,7 +326,7 @@ def create_brain():
     all_to_all = sim.AllToAllConnector()
     # one_to_one = sim.OneToOneConnector()
 
-    def static_syn(w, delay=0.1):
+    def static_syn(w, delay=1.0):
         return sim.StaticSynapse(weight=w, delay=delay)
 
     # CPG ---------> protractors
@@ -373,8 +375,9 @@ def create_brain():
     fn_moto = sim.Assembly(fn_pro, fn_ret)
     # cereb = sim.Assembly(MF_pop, PC_pop, IO_pop, DCN_pop)
 
-    clientLogger.info('TG:', min(tg_ganglion), max(tg_ganglion))
-    clientLogger.info('FN:', min(fn_moto), max(fn_moto))
+    logger.info(f"TG: {min(tg_ganglion)}, {max(tg_ganglion)}")
+    logger.info(f"FN: {min(fn_moto)}, {max(fn_moto)}")
+
     #
     # Views
     #
