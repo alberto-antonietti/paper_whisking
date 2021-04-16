@@ -35,6 +35,7 @@ spawn_pos = Point(0.0, -0.1, 1.025)
 
 r_pos = Point(0.02, -0.065, 1.025)
 l_pos = Point(-0.02, -0.065, 1.025)
+away = Point(-9.99, -0.065, 1.025)
 
 cyl_xml = """
 <?xml version='1.0'?>
@@ -222,6 +223,15 @@ def wait_state(duration):
     def cb(userdata):
         clientLogger.info('begin wait state')
         rospy.sleep(duration)
+        return 'success'
+
+    return CBState(cb)
+    
+def reset_state(duration):
+    @smach.cb_interface(outcomes=['success', 'aborted'])
+    def cb(userdata):
+        response = move_model('cylinder', away)
+        rospy.sleep(duration)
         clientLogger.info('end wait state')
         return 'success'
 
@@ -243,8 +253,14 @@ with sm:
     )
     StateMachine.add(
         'wait',
-        wait_state(2.0),
+        wait_state(1.0),
         # wait_state(0.01),
+        transitions={'success': 'reset',
+                     'aborted': ERROR}
+    )
+    StateMachine.add(
+        'reset',
+        reset_state(1.0),
         transitions={'success': 'random_state',
                      'aborted': ERROR}
     )

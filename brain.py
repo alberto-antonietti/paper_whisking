@@ -354,14 +354,16 @@ def create_brain():
     sim.Projection(tn_phase, MF_pop, to_one, static_syn(1.0))
 
     # Protractors activation
-    syn = sim.StaticSynapse(weight=1.0, delay=7.5)
+    random_weights = RandomDistribution('uniform', low=0.0, high=0.00001)
+    syn = sim.StaticSynapse(weight=random_weights, delay=7.5)
     for i in range(n_whisks):
         begin = i*20
         end = (i+1)*20
         sim.Projection(tn_ct[i:i+1], fn_pro[begin:end], all_to_all, syn)
 
     # Retractors inhibition
-    syn = sim.StaticSynapse(weight=-1.0, delay=7.5)
+    random_weights = RandomDistribution('uniform', low=-0.00001, high=0.0)
+    syn = sim.StaticSynapse(weight=random_weights, delay=7.5)
     sim.Projection(tn_ct[:2], fn_ret[:20], all_to_all, syn)
     sim.Projection(tn_ct[2:], fn_ret[20:], all_to_all, syn)
     #

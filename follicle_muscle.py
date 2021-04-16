@@ -32,8 +32,8 @@ def follicle_muscle(t, proxy, fn_moto):
     joint_names = ['whisker_' + side + str(i) + '_joint'
                    for side in 'LR' for i in range(2)]
 
-    pro_f = 0.25
-    ret_f = -0.15
+    pro_f = 0.15
+    ret_f = -0.10
 
     pro_d = Duration.from_sec(0.1)
     ret_d = Duration.from_sec(0.2)
