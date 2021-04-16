@@ -1,12 +1,18 @@
 import sys
 import csv
-import matplotlib.pyplot as plt
-
+import numpy as np
+from matplotlib import pyplot as plt
 
 if len(sys.argv) < 2:
     sys.exit(1)
 
-file_name = sys.argv[1]
+
+folder = sys.argv[1]
+
+if folder[-1] != "/":
+    folder = folder + "/"
+    
+file_name = folder + "joints_positions.csv"
 
 with open(file_name) as f:
     reader = csv.reader(f)

@@ -48,7 +48,7 @@
           "isClosable": true,
           "reorderEnabled": true,
           "title": "",
-          "height": 50,
+          "height": 60.00000000000001,
           "content": [
             {
               "type": "stack",
@@ -56,7 +56,7 @@
               "isClosable": true,
               "reorderEnabled": true,
               "title": "",
-              "activeItemIndex": 2,
+              "activeItemIndex": 4,
               "height": 100,
               "content": [
                 {

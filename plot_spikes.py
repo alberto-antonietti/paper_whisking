@@ -7,9 +7,12 @@ if len(sys.argv) < 2:
     sys.exit(1)
 
 
-file_name = sys.argv[1]
+folder = sys.argv[1]
 
-with open(file_name) as f:
+if folder[-1] != "/":
+    folder = folder + "/"
+
+with open(folder + "spikes.csv") as f:
     reader = csv.reader(f)
     rows = [r for r in reader][1:]
 
@@ -28,6 +31,19 @@ for row in rows:
 
 n_ids = np.array(list(events.keys()), dtype=int)
 n_ids.sort()
+
+go_x = np.array([0.0])
+go_y = np.array([0.0])
+with open(folder + "gonogo_events.csv") as f:
+    reader = csv.reader(f)
+    rows = [r for r in reader][1:]
+    for row in rows:
+        if row[0] == "GO":
+    	    go_x = np.concatenate((go_x, np.array([1000.0 * float(row[1]), 1000.0 * float(row[1])])))
+    	    go_y = np.concatenate((go_y, np.array([0.0, 1.0])))
+        elif row[0] == "NOGO":
+    	    go_x = np.concatenate((go_x, np.array([1000.0 * float(row[1]), 1000.0 * float(row[1])])))
+    	    go_y = np.concatenate((go_y, np.array([1.0, 0.0])))
 
 
 #MF: 3, 102
@@ -75,6 +91,7 @@ plt.legend()
 
 plot_spikes('orange', fn_range, 'Facial Nuclei', ax)
 plot_spikes('grey', tg_range, 'Trigeminal Ganglion', ax)
+ax.plot(go_x, 2369 + go_y*550, "k")
 
 ax = fig_handle.add_subplot(122)
 ax.set_xlabel('$t$ (ms)')
@@ -84,6 +101,7 @@ plot_spikes('red', gr_range, 'Granule', ax)
 plot_spikes('green', pc_range, 'Purkinje', ax)
 plot_spikes('magenta', io_range, 'Inferior Olive', ax)
 plot_spikes('black', dcn_range, 'Deep Cerebellar Nuclei', ax)
+ax.plot(go_x, go_y*2290, "k")
 plt.legend()
 
 
@@ -104,7 +122,7 @@ tght_range = range(2739, 2819)
 tgws_range = range(2821, 2901)
 
 fig_handle = plt.figure()
-ax = fig_handle.add_subplot(122)
+ax = fig_handle.add_subplot(111)
 ax.set_xlabel('$t$ (ms)')
 
 plot_spikes('orange', tgpr_range, 'TG Pression', ax)
@@ -112,6 +130,8 @@ plot_spikes('grey', tgct_range, 'TG Contact', ax)
 plot_spikes('blue', tgdt_range, 'TG Detach', ax)
 plot_spikes('red', tght_range, 'TG High Threshold', ax)
 plot_spikes('green', tgws_range, 'TG Whisking', ax)
+
+ax.plot(go_x, 2492 + go_y*420, "k")
 
 plt.legend()
 plt.show()
