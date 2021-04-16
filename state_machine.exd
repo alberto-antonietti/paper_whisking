@@ -7,17 +7,21 @@ from smach import CBState
 # from smach.state import State
 import rospy
 from gazebo_msgs.srv import SpawnEntity, SpawnEntityRequest
-from gazebo_msgs.srv import DeleteModel, DeleteModelRequest
 from geometry_msgs.msg import Point, Vector3, Quaternion
 from gazebo_msgs.srv import SetModelState
 from gazebo_msgs.msg import ModelState
 
 from hbp_nrp_excontrol.logs import clientLogger
 
+from std_msgs.msg import String
 
+pub = rospy.Publisher('go_nogo_state', String, queue_size=10)
+def talker(message):
+    hello_str = f"{message} time:{rospy.get_time()}"
+    pub.publish(hello_str)
+    
 set_model_state = rospy.ServiceProxy('/gazebo/set_model_state', SetModelState)
 spawn_entity = rospy.ServiceProxy('/gazebo/spawn_sdf_entity', SpawnEntity)
-delete_model = rospy.ServiceProxy('/gazebo/delete_model', DeleteModel)
 
 FINISHED = 'FINISHED'
 ERROR = 'ERROR'
@@ -27,7 +31,7 @@ PREEMPTED = 'PREEMPTED'
 sm = StateMachine(outcomes=[FINISHED, ERROR, PREEMPTED])
 
 spawn_pos = Point(0.0, -0.1, 1.025)
-near_pos = Point(0.0, -0.07, 1.025)
+
 
 r_pos = Point(0.02, -0.065, 1.025)
 l_pos = Point(-0.02, -0.065, 1.025)
@@ -72,7 +76,6 @@ shelf_xml = """
 <?xml version='1.0'?>
 <sdf version='1.5'>
   <model name='{name}'>
-    <static>1</static>
     <pose>0 0 0 0 0 0</pose>
     <link name='{name}'>
       <collision name="collision">
@@ -98,7 +101,7 @@ shelf_xml = """
       </visual>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <gravity>1</gravity>
+      <gravity>0</gravity>
     </link>
   </model>
 </sdf>
@@ -148,6 +151,10 @@ def spawn_cylinder_state():
     @smach.cb_interface(outcomes=['success', 'aborted'])
     def cb(userdata):
         spawn_entity(obj_msg)
+        msg = spawn_shelf_msg('shelf_go', 'Green')
+        spawn_entity(msg)
+        msg = spawn_shelf_msg('shelf_nogo', 'Red')
+        spawn_entity(msg)
         clientLogger.info('Spawned')
         return 'success'
 
@@ -155,21 +162,11 @@ def spawn_cylinder_state():
 
 
 def go_trial():
-    msg = DeleteModelRequest()
-    msg.model_name = 'shelf_nogo'
-    response = delete_model(msg)
-    if not response.success:
-        pass
-        # clientLogger.info('Failed deleting model')
-
-    msg = spawn_shelf_msg('shelf_go', 'Green')
-    response = spawn_entity(msg)
-    if not response.success:
-        pass  # Don't worry it's beacause already exist
-
+    move_model('shelf_nogo', Point(-10, -0.055, 1.03))
+    move_model('shelf_go', Point(0, -0.055, 1.03))
     clientLogger.info('')
     clientLogger.info('GO TRIAL')
-
+    talker("GO")
     response = move_model('cylinder', r_pos)
     if not response.success:
         clientLogger.info('Failed moving cylinder')
@@ -179,21 +176,11 @@ def go_trial():
 
 
 def nogo_trial():
-    msg = DeleteModelRequest()
-    msg.model_name = 'shelf_go'
-    response = delete_model(msg)
-    if not response.success:
-        pass
-        # clientLogger.info('Failed deleting model')
-
-    msg = spawn_shelf_msg('shelf_nogo', 'Red')
-    response = spawn_entity(msg)
-    if not response.success:
-        pass  # Don't worry it's beacause already exist
-
+    move_model('shelf_go', Point(-10, -0.055, 1.03))
+    move_model('shelf_nogo', Point(0, -0.055, 1.03))
     clientLogger.info('')
     clientLogger.info('NO-GO TRIAL')
-
+    talker("NOGO")
     response = move_model('cylinder', l_pos)
     if not response.success:
         return 'aborted'
@@ -211,14 +198,13 @@ def random_state():
         i = trial_count[0]
         if i == 0:
             np.random.shuffle(go_nogo)
-            # import os
-            # clientLogger.info(os.getcwd())
-            # /home/nrp/Documents/NRP/ExDBackend/hbp_nrp_backend
-            with open('go_nogo' + date + '.txt', 'a') as f:
+            with open('/home/alberto/.opt/nrpStorage/experiment_0/csv_records/go_nogo' + date + '.txt', 'a') as f:
                 f.write(str(go_nogo) + '\n')
 
             clientLogger.info('GO-NOGO session:', go_nogo)
         trial_count[0] = (i+1) % 10
+        with open('/home/alberto/.opt/nrpStorage/experiment_0/csv_records/events' + date + '.txt', 'a') as f:
+                f.write(f"trial {i} - GO-NOGO: {go_nogo[i]} \n")
 
         # clientLogger.info('GO-NOGO:', go_nogo[i])
 
@@ -262,9 +248,3 @@ with sm:
         transitions={'success': 'random_state',
                      'aborted': ERROR}
     )
-    # StateMachine.add(
-    #     'wait',
-    #     wait_state(2.0),
-    #     transitions={'success': 'wait',
-    #                  'aborted': ERROR}
-    # )

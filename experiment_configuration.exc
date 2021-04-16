@@ -19,6 +19,6 @@
   </cameraPose>
   <cloneDate>2020-01-15T08:16:03</cloneDate>
   <experimentControl>
-    <stateMachine id="statemachine_0_1617875249655_frontend_generated" src="statemachine_0_1617875249655_frontend_generated.exd" xsi:type="SMACHStateMachine" />
+    <stateMachine id="state_machine" src="state_machine.exd" xsi:type="SMACHStateMachine" />
   </experimentControl>
 </ExD>
