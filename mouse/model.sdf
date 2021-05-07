@@ -191,6 +191,7 @@
     
     <link name='root_link'>
       <pose frame=''>0 0 0 0 -0 0</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>2</mass>
@@ -206,6 +207,7 @@
     </link>
     <link name='joint_1_obj_hips_002_link'>
       <pose frame=''>5.3e-05 -0.001377 0 -1.57079 -1.57079 3.14159</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -253,6 +255,7 @@
     </joint>
     <link name='hips_002_link'>
       <pose frame=''>5.3e-05 -0.001377 0 -0 0 0</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -306,6 +309,7 @@
     </joint>
     <link name='joint_1_obj_hips_003_link'>
       <pose frame=''>5.3e-05 -0.005225 0 -1.79163 -1.57079 -2.92076</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -353,6 +357,7 @@
     </joint>
     <link name='hips_003_link'>
       <pose frame=''>5.3e-05 -0.005225 0 -0 0 0</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -406,6 +411,7 @@
     </joint>
     <link name='joint_1_obj_hips_004_link'>
       <pose frame=''>5.3e-05 -0.009366 0 -1.8424 -1.57079 -2.86998</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -453,6 +459,7 @@
     </joint>
     <link name='hips_004_link'>
       <pose frame=''>5.3e-05 -0.009366 0 -0 0 0</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -506,6 +513,7 @@
     </joint>
     <link name='joint_1_obj_hips_005_link'>
       <pose frame=''>5.3e-05 -0.012892 0 -1.86478 -1.57079 -2.8476</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -553,6 +561,7 @@
     </joint>
     <link name='hips_005_link'>
       <pose frame=''>5.3e-05 -0.012892 0 -0 0 0</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -606,6 +615,7 @@
     </joint>
     <link name='joint_1_obj_hips_006_link'>
       <pose frame=''>5.3e-05 -0.017277 0 -1.87737 -1.57079 -2.83502</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -653,6 +663,7 @@
     </joint>
     <link name='hips_006_link'>
       <pose frame=''>5.3e-05 -0.017277 0 -0 1e-06 0</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -706,6 +717,7 @@
     </joint>
     <link name='joint_1_obj_hips_007_link'>
       <pose frame=''>5.3e-05 -0.0211 0 -1.88544 -1.57079 -2.82695</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -753,6 +765,7 @@
     </joint>
     <link name='hips_007_link'>
       <pose frame=''>5.3e-05 -0.0211 0 -0 1e-06 0</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -806,6 +819,7 @@
     </joint>
     <link name='joint_1_obj_hips_008_link'>
       <pose frame=''>5.3e-05 -0.025002 0 -1.89105 -1.57079 -2.82134</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -853,6 +867,7 @@
     </joint>
     <link name='hips_008_link'>
       <pose frame=''>5.3e-05 -0.025002 0 -0 1e-06 0</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -906,6 +921,7 @@
     </joint>
     <link name='joint_1_obj_hips_009_link'>
       <pose frame=''>5.3e-05 -0.028671 0 -1.89517 -1.57079 -2.81722</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -953,6 +969,7 @@
     </joint>
     <link name='hips_009_link'>
       <pose frame=''>5.3e-05 -0.028671 0 -0 1e-06 0</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1006,6 +1023,7 @@
     </joint>
     <link name='joint_1_obj_hips_010_link'>
       <pose frame=''>5.3e-05 -0.03268 -1.7e-05 -1.89833 -1.57079 -2.81405</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1053,6 +1071,7 @@
     </joint>
     <link name='hips_010_link'>
       <pose frame=''>5.3e-05 -0.03268 -1.7e-05 -0 1e-06 0</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1106,6 +1125,7 @@
     </joint>
     <link name='joint_1_obj_hips_011_link'>
       <pose frame=''>5.3e-05 -0.035854 -0.000177 -1.90083 -1.57079 -2.81155</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1153,6 +1173,7 @@
     </joint>
     <link name='hips_011_link'>
       <pose frame=''>5.3e-05 -0.035854 -0.000177 -0 1e-06 0</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1206,6 +1227,7 @@
     </joint>
     <link name='joint_1_obj_hips_012_link'>
       <pose frame=''>5.3e-05 -0.039405 -0.000236 1.23873 -1.57079 0.332069</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1253,6 +1275,7 @@
     </joint>
     <link name='hips_012_link'>
       <pose frame=''>5.3e-05 -0.039405 -0.000236 -0 1e-06 0</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1306,6 +1329,7 @@
     </joint>
     <link name='joint_1_obj_hips_013_link'>
       <pose frame=''>5.3e-05 -0.042451 -0.000153 1.23705 -1.57079 0.333746</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1353,6 +1377,7 @@
     </joint>
     <link name='hips_013_link'>
       <pose frame=''>5.3e-05 -0.042451 -0.000153 -1e-06 1e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1406,6 +1431,7 @@
     </joint>
     <link name='joint_1_obj_hips_014_link'>
       <pose frame=''>5.3e-05 -0.045321 -0.000363 1.23564 -1.57079 0.335156</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1453,6 +1479,7 @@
     </joint>
     <link name='hips_014_link'>
       <pose frame=''>5.3e-05 -0.045321 -0.000363 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1506,6 +1533,7 @@
     </joint>
     <link name='joint_1_obj_hips_015_link'>
       <pose frame=''>5.3e-05 -0.047999 -0.000315 1.23444 -1.57079 0.336358</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1553,6 +1581,7 @@
     </joint>
     <link name='hips_015_link'>
       <pose frame=''>5.3e-05 -0.047999 -0.000315 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1606,6 +1635,7 @@
     </joint>
     <link name='joint_1_obj_hips_016_link'>
       <pose frame=''>5.3e-05 -0.051433 -0.000395 1.2334 -1.57079 0.337395</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1653,6 +1683,7 @@
     </joint>
     <link name='hips_016_link'>
       <pose frame=''>5.3e-05 -0.051433 -0.000395 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1706,6 +1737,7 @@
     </joint>
     <link name='joint_1_obj_hips_017_link'>
       <pose frame=''>5.3e-05 -0.05495 -0.00038 1.2325 -1.57079 0.338298</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1753,6 +1785,7 @@
     </joint>
     <link name='hips_017_link'>
       <pose frame=''>5.3e-05 -0.05495 -0.00038 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1806,6 +1839,7 @@
     </joint>
     <link name='joint_1_obj_hips_018_link'>
       <pose frame=''>5.3e-05 -0.059073 -0.00038 1.2317 -1.57079 0.339093</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1853,6 +1887,7 @@
     </joint>
     <link name='hips_018_link'>
       <pose frame=''>5.3e-05 -0.059073 -0.00038 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1906,6 +1941,7 @@
     </joint>
     <link name='joint_1_obj_hips_019_link'>
       <pose frame=''>5.3e-05 -0.062823 -0.000427 1.231 -1.57079 0.339797</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -1953,6 +1989,7 @@
     </joint>
     <link name='hips_019_link'>
       <pose frame=''>5.3e-05 -0.062824 -0.000427 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -2006,6 +2043,7 @@
     </joint>
     <link name='joint_1_obj_hips_020_link'>
       <pose frame=''>5.3e-05 -0.066624 -0.000483 1.23037 -1.57079 0.340425</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -2053,6 +2091,7 @@
     </joint>
     <link name='hips_020_link'>
       <pose frame=''>5.3e-05 -0.066624 -0.000483 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -2106,6 +2145,7 @@
     </joint>
     <link name='joint_1_obj_hips_021_link'>
       <pose frame=''>5.3e-05 -0.071028 -0.000216 1.22981 -1.57079 0.340989</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -2153,6 +2193,7 @@
     </joint>
     <link name='hips_021_link'>
       <pose frame=''>5.3e-05 -0.071028 -0.000216 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -2206,6 +2247,7 @@
     </joint>
     <link name='hips_link'>
       <pose frame=''>5.3e-05 -0.07861 0.00538 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -2259,6 +2301,7 @@
     </joint>
     <link name='spine_link'>
       <pose frame=''>5.3e-05 -0.084802 0.012973 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -2314,6 +2357,7 @@
     </joint>
     <link name='chest_link'>
       <pose frame=''>5.3e-05 -0.104021 0.014157 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -2757,6 +2801,7 @@
     </joint>
     <link name='shoulder_L_link'>
       <pose frame=''>5.3e-05 -0.125819 0.013035 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -2969,6 +3014,7 @@
     </joint>
     <link name='shoulder_R_link'>
       <pose frame=''>5.3e-05 -0.125819 0.013035 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -3181,6 +3227,7 @@
     </joint>
     <link name='spine_001_link'>
       <pose frame=''>5.1e-05 -0.115386 -0.001683 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -3569,7 +3616,6 @@
       <child>shin_lower_R_link</child>
       <parent>world</parent>
     </joint>
-    <static>false</static>
     <self_collide>false</self_collide>
     <plugin name='generic_controller' filename='libgeneric_controller_plugin.so'>
       <controller joint_name='joint_1_obj_hips_002_joint'>
