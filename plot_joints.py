@@ -37,15 +37,16 @@ for r in rows:
 joint_names = ['whisker_' + side + str(i) + '_joint'
                for i in range(2) for side in 'LR']
 
+fig, ax = plt.subplots(2, 2, sharex=True, sharey=True)
+ax = ax.ravel()
 for i, joint_name in enumerate(joint_names):
     joint = joints[joint_name]
-    plt.subplot(2, 2, i+1)
     plt.tight_layout()
 
-    plt.title(joint_name)
-    plt.xlabel('$t$ (s)')
-    plt.ylabel('$angle$ (rad)')
+    ax[i].set_title(joint_name)
+    ax[i].set_xlabel('$t$ (s)')
+    ax[i].set_ylabel('$angle$ (rad)')
 
-    plt.plot(joint[0], joint[1])
+    ax[i].plot(joint[0], joint[1])
 
 plt.show()
