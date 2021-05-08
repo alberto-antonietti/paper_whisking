@@ -8,12 +8,10 @@ from hbp_nrp_cle.robotsim.RobotInterface import Topic
                     headers=["type", "time", "event"])
 @nrp.MapRobotSubscriber("contact_point_data",
                         Topic("/gazebo/contact_point_data", ContactsState))
-@nrp.MapSpikeSource("head_contact", nrp.brain.head_contact, nrp.poisson, delay=1.0)
 @nrp.MapSpikeSource("reward", nrp.brain.reward, nrp.poisson, delay=1.0)
 @nrp.Robot2Neuron()
-def shelf_contact(t, recorder, contact_point_data, head_contact, reward):
+def shelf_contact(t, recorder, contact_point_data, reward):
     reward.rate = 0.0
-    head_contact.rate = 0.0
 
     if contact_point_data.value:
         for state in contact_point_data.value.states:
@@ -24,13 +22,11 @@ def shelf_contact(t, recorder, contact_point_data, head_contact, reward):
 
             if contact_go:
                 reward.rate = 100.0
-                head_contact.rate = 100.0
                 clientLogger.info('Sending reward')
                 recorder.record_entry('contact', t, 'reward')
                 break
 
             if contact_nogo:
-                head_contact.rate = 100.0
                 clientLogger.info('Shelf contact')
                 recorder.record_entry('contact', t, 'no_reward')
                 break

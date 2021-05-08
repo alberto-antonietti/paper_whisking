@@ -42,7 +42,7 @@ Init_PFPC = {'distribution': 'uniform',
              'low': 1.0, 'high': 3.0}
 # Init_PFPC = 1.0
 Init_MFDCN = 0.4  # 0.3 troopo poco, 0.5 troppo?
-Init_PCDCN = -1.0
+Init_PCDCN = -0.5
 CORES = 1
 RECORDING_CELLS = True
 
@@ -140,7 +140,7 @@ def create_cereb():
                                               "alpha": LTD3/LTP3,
                                               "mu_plus": 0.0,   # Additive STDP
                                               "mu_minus": 0.0,  # Additive STDP
-                                              "Wmax": -0.5,
+                                              "Wmax": -2.5,
                                               "weight": Init_PCDCN,
                                               "delay": 1.0})
         PCDCN_conn_param = {"model": "stdp_synapse"}
@@ -317,10 +317,11 @@ def create_brain():
     # Trigeminal Nucleus interneurons
     tn_ct = population(n_whisks)
     tn_phase = population(tg_pop_size)
+    
+    logger.info(f"tn_ct: {min(tn_ct)}, {max(tn_ct)}")
+    logger.info(f"tn_phase: {min(tn_phase)}, {max(tn_phase)}")
 
     # Head movement in-out neurons
-    rise_head = population(1)
-    head_contact = population(1)
     reward = population(1)
 
     #
@@ -348,7 +349,7 @@ def create_brain():
 
     fan_out = sim.FixedNumberPostConnector(n=4)
     to_one = sim.FixedNumberPostConnector(n=1)  # like ont_to_one but random
-    # sim.Projection(tg_ws, MF_pop, fan_out, static_syn(1.0))
+    sim.Projection(tg_ws, MF_pop, fan_out, static_syn(4.0))
     # sim.Projection(tg_ct, MF_pop, fan_out, static_syn(1.0))
     sim.Projection(tn_phase, MF_pop, fan_out, static_syn(4.0))
     sim.Projection(tn_phase, MF_pop, to_one, static_syn(1.0))
@@ -368,9 +369,7 @@ def create_brain():
     sim.Projection(tn_ct[2:], fn_ret[20:], all_to_all, syn)
     #
 
-    # Rise head
-    sim.Projection(DCN_pop, rise_head, all_to_all, static_syn(0.001))
-    sim.Projection(head_contact, rise_head, all_to_all, static_syn(-100.0))
+    # Reward
     sim.Projection(reward, IO_pop, all_to_all, static_syn(10.0))
     #
 
@@ -395,14 +394,13 @@ def create_brain():
     cells = sim.Assembly(cpg, fn_pro, fn_ret,
                          tg_pr, tg_ct, tg_dt, tg_ht, tg_ws,
                          tn_phase,
-                         MF_pop, GR_pop, PC_pop, IO_pop, DCN_pop,
-                         rise_head, head_contact)
+                         MF_pop, GR_pop, PC_pop, IO_pop, DCN_pop)
 
     populations = (
         cpg, fn_moto,
         tg_ganglion, tg_pr, tg_ws, tn_phase,
         MF_pop, GR_pop, PC_pop, DCN_pop,
-        rise_head, head_contact, reward
+        reward
     )
     return cells, populations, PFPC_conn
 
@@ -412,5 +410,5 @@ circuit, populations, PFPC_conn = create_brain()
     cpg, fn_moto,
     tg_ganglion, tg_pr, tg_ws, tn_phase,
     mossy, granule, purkinje, dcn,
-    rise_head, head_contact, reward
+    reward
 ) = populations
