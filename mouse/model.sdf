@@ -1,4 +1,4 @@
-<sdf version='1.6'>
+﻿<sdf version='1.6'>
   <model name='mouse_v2_model'>
     <link name="whisker_L0">
       <pose>0 -0.15 0.009 0.2 1.570795 0</pose>
@@ -2447,13 +2447,13 @@
       <child>neck_link</child>
       <parent>chest_link</parent>
       <axis>
-        <xyz>0 0 1</xyz>
+        <xyz>1 0 0</xyz>
         <!-- we should set sane limits here, the default for all joints is a fixed position that
              cannot be changed (lower and upper = 0, so it is disabled now since we want to move
              the neck joint
         <limit>
-          <lower>0</lower>
-          <upper>0</upper>
+          <lower>0.01</lower>
+          <upper>1.0</upper>
           <effort>100</effort>
           <velocity>1</velocity>
         </limit>
@@ -2855,6 +2855,7 @@
     </joint>
     <link name='upper_arm_L_link'>
       <pose frame=''>0.007406 -0.129168 0.009404 -1e-06 -0.191984 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -2908,6 +2909,7 @@
     </joint>
     <link name='forearm_L_link'>
       <pose frame=''>0.009446 -0.11477 0.001452 -1e-06 -0.191984 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -2961,6 +2963,7 @@
     </joint>
     <link name='wrist_L_link'>
       <pose frame=''>0.011464 -0.129985 -0.005493 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -3068,6 +3071,7 @@
     </joint>
     <link name='upper_arm_R_link'>
       <pose frame=''>-0.007301 -0.129168 0.009405 -1e-06 0.191989 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -3121,6 +3125,7 @@
     </joint>
     <link name='forearm_R_link'>
       <pose frame=''>-0.009341 -0.11477 0.001453 -1e-06 0.191989 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -3174,6 +3179,7 @@
     </joint>
     <link name='wrist_R_link'>
       <pose frame=''>-0.011358 -0.129985 -0.005493 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -3281,6 +3287,7 @@
     </joint>
     <link name='thigh_L_link'>
       <pose frame=''>0.009178 -0.086258 0.010475 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -3334,6 +3341,7 @@
     </joint>
     <link name='shin_L_link'>
       <pose frame=''>0.010341 -0.100876 0.005552 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -3387,6 +3395,7 @@
     </joint>
     <link name='shin_lower_L_link'>
       <pose frame=''>0.010803 -0.087557 -0.005332 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -3440,6 +3449,7 @@
     </joint>
     <link name='thigh_R_link'>
       <pose frame=''>-0.009136 -0.086258 0.010475 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -3493,6 +3503,7 @@
     </joint>
     <link name='shin_R_link'>
       <pose frame=''>-0.010324 -0.100876 0.005552 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
@@ -3546,6 +3557,7 @@
     </joint>
     <link name='shin_lower_R_link'>
       <pose frame=''>-0.010865 -0.087557 -0.005332 -1e-06 2e-06 1e-06</pose>
+      <static>true</static>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1</mass>
