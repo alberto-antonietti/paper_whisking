@@ -57,6 +57,8 @@ with open(folder + "gonogo_events.csv") as f:
 #tg_dt: 2657, 2736
 #tg_ht: 2739, 2818
 #tg_ws: 2821, 2900
+
+
 #TG: 2493, 2900
 #FN: 2369, 2490
 
@@ -92,6 +94,8 @@ plt.legend()
 plot_spikes('orange', fn_range, 'Facial Nuclei', ax)
 plot_spikes('grey', tg_range, 'Trigeminal Ganglion', ax)
 ax.plot(go_x, 2369 + go_y*550, "k")
+plt.legend()
+
 
 ax = fig_handle.add_subplot(122)
 ax.set_xlabel('$t$ (ms)')
@@ -106,13 +110,16 @@ plt.legend()
 
 
 
+#FN: 2369, 2490
+#TG: 2493, 2900
 #tg_pr: 2493, 2572
 #tg_ct: 2575, 2654
 #tg_dt: 2657, 2736
 #tg_ht: 2739, 2818
 #tg_ws: 2821, 2900
-#TG: 2493, 2900
-#FN: 2369, 2490
+#tn_ct: 2903, 2906
+#tn_phase: 2909, 2988
+
 
 
 tgpr_range = range(2493, 2573)
@@ -120,6 +127,8 @@ tgct_range = range(2575, 2655)
 tgdt_range = range(2657, 2737)
 tght_range = range(2739, 2819)
 tgws_range = range(2821, 2901)
+tnct_range = range(2903, 2907)
+tnph_range = range(2909, 2989)
 
 fig_handle = plt.figure()
 ax = fig_handle.add_subplot(111)
@@ -130,8 +139,10 @@ plot_spikes('grey', tgct_range, 'TG Contact', ax)
 plot_spikes('blue', tgdt_range, 'TG Detach', ax)
 plot_spikes('red', tght_range, 'TG High Threshold', ax)
 plot_spikes('green', tgws_range, 'TG Whisking', ax)
+plot_spikes('black', tnct_range, 'TN Contact', ax)
+plot_spikes('purple', tnph_range, 'TN Phase', ax)
 
-ax.plot(go_x, 2492 + go_y*420, "k")
+ax.plot(go_x, 2492 + go_y*620, "k")
 
 plt.legend()
 plt.show()
