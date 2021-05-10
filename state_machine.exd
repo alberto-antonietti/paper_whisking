@@ -35,7 +35,7 @@ spawn_pos = Point(0.0, -0.1, 1.025)
 
 r_pos = Point(0.02, -0.065, 1.025)
 l_pos = Point(-0.02, -0.065, 1.025)
-away = Point(-9.99, -0.065, 1.025)
+away = Point(-9.99, -0.065, 1.024)
 
 cyl_xml = """
 <?xml version='1.0'?>
@@ -72,6 +72,7 @@ cyl_xml = """
   </model>
 </sdf>
 """
+
 
 shelf_xml = """
 <?xml version='1.0'?>
@@ -216,7 +217,6 @@ def random_state():
             return nogo_trial()
 
     return CBState(cb)
-
 
 def wait_state(duration):
     @smach.cb_interface(outcomes=['success', 'aborted'])

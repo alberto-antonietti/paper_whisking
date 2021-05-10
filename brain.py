@@ -26,9 +26,9 @@ PLAST1 = True   # PF-PC ex
 PLAST2 = False  # MF-DCN ex
 PLAST3 = False  #
 
-LTP1 = 0.1
+LTP1 = 0.01
 # LTP1 = 0.0
-LTD1 = -1.0
+LTD1 = -0.1
 
 LTP2 = 1e-5
 LTD2 = -1e-6
@@ -42,7 +42,7 @@ Init_PFPC = {'distribution': 'uniform',
              'low': 1.0, 'high': 3.0}
 # Init_PFPC = 1.0
 Init_MFDCN = 0.4  # 0.3 troopo poco, 0.5 troppo?
-Init_PCDCN = -0.5
+Init_PCDCN = -0.6
 CORES = 1
 RECORDING_CELLS = True
 
@@ -341,7 +341,7 @@ def create_brain():
 
     # Disynaptic reflex: tg_ct --> tn_ct --> fn_moto
     # tg_ct --> tn_ct
-    syn = sim.StaticSynapse(weight=0.1)
+    syn = sim.StaticSynapse(weight=10.0)
     for i in range(n_whisks):
         begin = i*20
         end = (i+1)*20

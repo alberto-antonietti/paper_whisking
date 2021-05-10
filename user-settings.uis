@@ -48,17 +48,33 @@
           "isClosable": true,
           "reorderEnabled": true,
           "title": "",
-          "height": 60.00000000000001,
+          "height": 50,
+          "width": 72.72727272727272,
           "content": [
             {
               "type": "stack",
-              "width": 66.66666666666666,
+              "width": 67.01697655618432,
               "isClosable": true,
               "reorderEnabled": true,
               "title": "",
-              "activeItemIndex": 0,
+              "activeItemIndex": 1,
               "height": 100,
               "content": [
+                {
+                  "type": "component",
+                  "title": "Brain Editor",
+                  "id": "pynn-editor",
+                  "componentName": "angularModuleComponent",
+                  "componentState": {
+                    "module": "exdFrontendApp",
+                    "angularDirective": "<pynn-editor />",
+                    "singleton": true
+                  },
+                  "pwidth": 800,
+                  "pheight": 900,
+                  "isClosable": true,
+                  "reorderEnabled": true
+                },
                 {
                   "type": "component",
                   "title": "Environment Rendering",
@@ -73,21 +89,6 @@
                   "customOptionsDirective": "<environment-rendering-options/>",
                   "pwidth": 800,
                   "pheight": 600,
-                  "reorderEnabled": true
-                },
-                {
-                  "type": "component",
-                  "title": "Spike Train",
-                  "id": "spike-train",
-                  "componentName": "angularModuleComponent",
-                  "componentState": {
-                    "module": "exdFrontendApp",
-                    "angularDirective": "<spike-train />",
-                    "singleton": true
-                  },
-                  "pwidth": 600,
-                  "pheight": 300,
-                  "isClosable": true,
                   "reorderEnabled": true
                 },
                 {
@@ -107,21 +108,6 @@
                 },
                 {
                   "type": "component",
-                  "title": "Brain Editor",
-                  "id": "pynn-editor",
-                  "componentName": "angularModuleComponent",
-                  "componentState": {
-                    "module": "exdFrontendApp",
-                    "angularDirective": "<pynn-editor />",
-                    "singleton": true
-                  },
-                  "pwidth": 800,
-                  "pheight": 900,
-                  "isClosable": true,
-                  "reorderEnabled": true
-                },
-                {
-                  "type": "component",
                   "title": "Smach Editor",
                   "id": "smach-editor",
                   "componentName": "angularModuleComponent",
@@ -134,66 +120,47 @@
                   "pheight": 900,
                   "isClosable": true,
                   "reorderEnabled": true
+                },
+                {
+                  "type": "component",
+                  "title": "Spike Train",
+                  "id": "spike-train",
+                  "componentName": "angularModuleComponent",
+                  "componentState": {
+                    "module": "exdFrontendApp",
+                    "angularDirective": "<spike-train />",
+                    "singleton": true
+                  },
+                  "pwidth": 600,
+                  "pheight": 300,
+                  "isClosable": true,
+                  "reorderEnabled": true
                 }
               ]
             },
             {
-              "type": "column",
+              "type": "stack",
               "isClosable": true,
               "reorderEnabled": true,
               "title": "",
-              "width": 33.33333333333333,
+              "activeItemIndex": 0,
+              "height": 100,
+              "width": 32.98302344381568,
               "content": [
                 {
-                  "type": "stack",
+                  "type": "component",
+                  "title": "Log Console",
+                  "id": "log-console",
+                  "componentName": "angularModuleComponent",
+                  "componentState": {
+                    "module": "exdFrontendApp",
+                    "angularDirective": "<log-console />",
+                    "singleton": true
+                  },
+                  "pwidth": 400,
+                  "pheight": 300,
                   "isClosable": true,
-                  "reorderEnabled": true,
-                  "title": "",
-                  "activeItemIndex": 0,
-                  "width": 33.33333333333333,
-                  "height": 50,
-                  "content": [
-                    {
-                      "type": "component",
-                      "title": "ROS Terminal",
-                      "id": "ros-terminal",
-                      "componentName": "angularModuleComponent",
-                      "componentState": {
-                        "module": "exdFrontendApp",
-                        "angularDirective": "<ros-terminal />",
-                        "singleton": true
-                      },
-                      "pwidth": 400,
-                      "pheight": 300,
-                      "isClosable": true,
-                      "reorderEnabled": true
-                    }
-                  ]
-                },
-                {
-                  "type": "stack",
-                  "isClosable": true,
-                  "reorderEnabled": true,
-                  "title": "",
-                  "activeItemIndex": 0,
-                  "height": 50,
-                  "content": [
-                    {
-                      "type": "component",
-                      "title": "Log Console",
-                      "id": "log-console",
-                      "componentName": "angularModuleComponent",
-                      "componentState": {
-                        "module": "exdFrontendApp",
-                        "angularDirective": "<log-console />",
-                        "singleton": true
-                      },
-                      "pwidth": 400,
-                      "pheight": 300,
-                      "isClosable": true,
-                      "reorderEnabled": true
-                    }
-                  ]
+                  "reorderEnabled": true
                 }
               ]
             }
