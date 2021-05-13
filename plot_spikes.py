@@ -88,8 +88,6 @@ fig_handle = plt.figure()
 
 ax = fig_handle.add_subplot(121)
 ax.set_xlabel('$t$ (ms)')
-plt.legend()
-#ax.set_yticks([])
 
 plot_spikes('orange', fn_range, 'Facial Nuclei', ax)
 plot_spikes('grey', tg_range, 'Trigeminal Ganglion', ax)
@@ -99,7 +97,6 @@ plt.legend()
 
 ax = fig_handle.add_subplot(122)
 ax.set_xlabel('$t$ (ms)')
-#ax.set_yticks([])
 plot_spikes('blue', mf_range, 'Mossy', ax)
 plot_spikes('red', gr_range, 'Granule', ax)
 plot_spikes('green', pc_range, 'Purkinje', ax)
