@@ -120,21 +120,6 @@
                   "pheight": 900,
                   "isClosable": true,
                   "reorderEnabled": true
-                },
-                {
-                  "type": "component",
-                  "title": "Spike Train",
-                  "id": "spike-train",
-                  "componentName": "angularModuleComponent",
-                  "componentState": {
-                    "module": "exdFrontendApp",
-                    "angularDirective": "<spike-train />",
-                    "singleton": true
-                  },
-                  "pwidth": 600,
-                  "pheight": 300,
-                  "isClosable": true,
-                  "reorderEnabled": true
                 }
               ]
             },
