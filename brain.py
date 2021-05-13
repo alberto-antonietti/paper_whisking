@@ -28,7 +28,7 @@ PLAST3 = False  #
 
 LTP1 = 0.01
 # LTP1 = 0.0
-LTD1 = -0.1
+LTD1 = -0.02
 
 LTP2 = 1e-5
 LTD2 = -1e-6
@@ -42,7 +42,7 @@ Init_PFPC = {'distribution': 'uniform',
              'low': 1.0, 'high': 3.0}
 # Init_PFPC = 1.0
 Init_MFDCN = 0.4  # 0.3 troopo poco, 0.5 troppo?
-Init_PCDCN = -0.6
+Init_PCDCN = -1.0
 CORES = 1
 RECORDING_CELLS = True
 

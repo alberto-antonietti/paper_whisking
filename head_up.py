@@ -51,7 +51,7 @@ def head_up(t, reward, recorder, state, joint_states, go_trial, gonogo, dcn):
     if state.value == 'up':
         #clientLogger.info('neck_pos', neck_pos)
         
-        if neck_pos < -0.40:
+        if neck_pos < -0.25:
             clientLogger.info('Head raised', neck_pos)
             if go_trial:
                 reward.rate = 100.0
@@ -61,13 +61,14 @@ def head_up(t, reward, recorder, state, joint_states, go_trial, gonogo, dcn):
                 clientLogger.info('NO reward')
                 recorder.record_entry('contact', t, 'no_reward')
             state.value = 'down'
-        cmd_pos = -1.0
+        cmd_pos = -0.5
 
     if state.value == 'down':
 
-        cmd_pos = 1.0
-        if neck_pos >= -0.1:  # Head lowered
+        cmd_pos = 0.5
+        if neck_pos >= -0.05:  # Head lowered
             state.value = 'rest'
             clientLogger.info('STATE:', state.value)
+            cmd_pos = 0.0
 
     return std_msgs.msg.Float64(cmd_pos)
