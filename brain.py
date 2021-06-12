@@ -26,9 +26,9 @@ PLAST1 = True   # PF-PC ex
 PLAST2 = False  # MF-DCN ex
 PLAST3 = False  #
 
-LTP1 = 0.01
+LTP1 = 0.005
 # LTP1 = 0.0
-LTD1 = -0.02
+LTD1 = -0.03
 
 LTP2 = 1e-5
 LTD2 = -1e-6
@@ -42,8 +42,8 @@ Init_PFPC = {'distribution': 'uniform',
              'low': 1.0, 'high': 3.0}
 # Init_PFPC = 1.0
 Init_MFDCN = 0.4  # 0.3 troopo poco, 0.5 troppo?
-Init_PCDCN = -1.0
-CORES = 1
+Init_PCDCN = {'distribution': 'uniform',
+             'low': -3.0, 'high': -2.0}
 RECORDING_CELLS = True
 
 
@@ -140,7 +140,7 @@ def create_cereb():
                                               "alpha": LTD3/LTP3,
                                               "mu_plus": 0.0,   # Additive STDP
                                               "mu_minus": 0.0,  # Additive STDP
-                                              "Wmax": -2.5,
+                                              "Wmax": -100.5,
                                               "weight": Init_PCDCN,
                                               "delay": 1.0})
         PCDCN_conn_param = {"model": "stdp_synapse"}
@@ -151,9 +151,14 @@ def create_cereb():
 
     # MF-GR excitatory fixed connections
     # each GR receives 4 connections from 4 random granule cells
-    sim.nest.Connect(MF, GR, {'rule': 'fixed_indegree',
+    sim.nest.Connect(MF[:50], GR[:1000], {'rule': 'fixed_indegree',
                               'indegree': 4,
                               "multapses": False}, MFGR_conn_param)
+                              
+    sim.nest.Connect(MF[50:], GR[1000:], {'rule': 'fixed_indegree',
+                              'indegree': 4,
+                              "multapses": False}, MFGR_conn_param)
+                                                        
     sim.nest.GetConnections(MF, GR)  # MFGR_conn
 
     # A_minus - Amplitude of weight change for depression
@@ -328,7 +333,7 @@ def create_brain():
     # Projections
     #
     all_to_all = sim.AllToAllConnector()
-    # one_to_one = sim.OneToOneConnector()
+    one_to_one = sim.OneToOneConnector()
 
     def static_syn(w, delay=1.0):
         return sim.StaticSynapse(weight=w, delay=delay)
@@ -349,10 +354,10 @@ def create_brain():
 
     fan_out = sim.FixedNumberPostConnector(n=4)
     to_one = sim.FixedNumberPostConnector(n=1)  # like ont_to_one but random
-    sim.Projection(tg_ws, MF_pop, fan_out, static_syn(4.0))
-    # sim.Projection(tg_ct, MF_pop, fan_out, static_syn(1.0))
-    sim.Projection(tn_phase, MF_pop, fan_out, static_syn(4.0))
-    sim.Projection(tn_phase, MF_pop, to_one, static_syn(1.0))
+    sim.Projection(tg_ws[:40], MF_pop[:50], fan_out, static_syn(2.0))
+    sim.Projection(tg_ws[40:], MF_pop[50:], fan_out, static_syn(2.0))
+    sim.Projection(tg_ct, MF_pop[10:90], one_to_one, static_syn(2.0))
+    sim.Projection(tn_phase, MF_pop[10:90], one_to_one, static_syn(2.0))
 
     # Protractors activation
     random_weights = RandomDistribution('uniform', low=0.0, high=0.00001)

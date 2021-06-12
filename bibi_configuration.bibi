@@ -14,6 +14,6 @@
   <ns1:transferFunction src="follicle_muscle.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
   <ns1:transferFunction src="csv_weight_monitor.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
   <ns1:transferFunction src="csv_spike_monitor.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
-  <ns1:transferFunction src="csv_joint_state_monitor.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
   <ns1:transferFunction src="csv_event_monitor.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
+  <ns1:transferFunction src="csv_joint_state_monitor.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
 </ns1:bibi>

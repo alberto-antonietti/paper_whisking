@@ -15,7 +15,6 @@ from hbp_nrp_excontrol.logs import clientLogger
 
 from std_msgs.msg import String
 
-
 pub = rospy.Publisher('go_nogo_state', String, queue_size=10)
 def talker(message):
     hello_str = f"{message} time:{rospy.get_time()}"

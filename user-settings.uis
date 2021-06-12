@@ -53,7 +53,7 @@
           "content": [
             {
               "type": "stack",
-              "width": 67.01697655618432,
+              "width": 62.86306242914663,
               "isClosable": true,
               "reorderEnabled": true,
               "title": "",
@@ -130,7 +130,7 @@
               "title": "",
               "activeItemIndex": 0,
               "height": 100,
-              "width": 32.98302344381568,
+              "width": 37.13693757085337,
               "content": [
                 {
                   "type": "component",
