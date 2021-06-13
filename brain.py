@@ -23,27 +23,18 @@ sim.nest.SetKernelStatus({'local_num_threads' : CORES,
 
 # CEREBELLUM
 PLAST1 = True   # PF-PC ex
-PLAST2 = False  # MF-DCN ex
-PLAST3 = False  #
 
-LTP1 = 0.005
-# LTP1 = 0.0
+#LTP1 = 0.005
+LTP1 = 0.0
 LTD1 = -0.03
 
-LTP2 = 1e-5
-LTD2 = -1e-6
-LTP3 = 1e-7
-LTD3 = 1e-6
 
-# Init_PFPC = {'distribution': 'normal',
-#              'mu': 1.5,
-#              'sigma': 1.0}
 Init_PFPC = {'distribution': 'uniform',
-             'low': 1.0, 'high': 3.0}
+             'low': 1.0, 'high': 2.0}
 # Init_PFPC = 1.0
 Init_MFDCN = 0.4  # 0.3 troopo poco, 0.5 troppo?
 Init_PCDCN = {'distribution': 'uniform',
-             'low': -3.0, 'high': -2.0}
+             'low': -2.0, 'high': -1.0}
 RECORDING_CELLS = True
 
 
@@ -94,7 +85,6 @@ def create_cereb():
 
     MF_pop = sim.create(sim.native_cell_type("parrot_neuron"), {}, MF_num)
     GR_pop = sim.create(sim.native_cell_type("granular_neuron"), {}, GR_num)
-    # GR = sim.nest.Create("granular_neuron", GR_num)
     PC_pop = sim.create(sim.native_cell_type("purkinje_neuron"), {}, PC_num)
     IO_pop = sim.create(sim.native_cell_type("olivary_neuron"), {}, IO_num)
     DCN_pop = sim.create(sim.native_cell_type("nuclear_neuron"), {}, DCN_num)
@@ -115,10 +105,6 @@ def create_cereb():
         vt = sim.nest.Create("volume_transmitter_alberto", PC_num)
         for n, vti in enumerate(vt):
             sim.nest.SetStatus([vti], {"vt_num": n})
-    if PLAST2:
-        vt2 = sim.nest.Create("volume_transmitter_alberto", DCN_num)
-        for n, vti in enumerate(vt2):
-            sim.nest.SetStatus([vti], {"vt_num": n})
 
     recdict2 = {"to_memory": False,
                 "to_file":    True,
@@ -131,36 +117,25 @@ def create_cereb():
     MFGR_conn_param = {"model": "static_synapse",
                        "weight": {'distribution': 'uniform',
                                   # -> 0.75 GR fire at 7 Hz
-                                  'low': 1.0, 'high': 2.0},
+                                  'low': 0.6, 'high': 1.2},
                        "delay": 1.0}
 
-    if PLAST3:
-        sim.nest.SetDefaults('stdp_synapse', {"tau_plus": 30.0,
-                                              "lambda": LTP3,
-                                              "alpha": LTD3/LTP3,
-                                              "mu_plus": 0.0,   # Additive STDP
-                                              "mu_minus": 0.0,  # Additive STDP
-                                              "Wmax": -100.5,
-                                              "weight": Init_PCDCN,
-                                              "delay": 1.0})
-        PCDCN_conn_param = {"model": "stdp_synapse"}
-    else:
-        PCDCN_conn_param = {"model": "static_synapse",
-                            "weight": Init_PCDCN,
-                            "delay": 1.0}
+    PCDCN_conn_param = {"model": "static_synapse",
+		         "weight": Init_PCDCN,
+		         "delay": 1.0}
 
     # MF-GR excitatory fixed connections
     # each GR receives 4 connections from 4 random granule cells
     sim.nest.Connect(MF[:50], GR[:1000], {'rule': 'fixed_indegree',
-                              'indegree': 4,
-                              "multapses": False}, MFGR_conn_param)
-                              
+                               'indegree': 4,
+                               "multapses": False}, MFGR_conn_param)
+                               
     sim.nest.Connect(MF[50:], GR[1000:], {'rule': 'fixed_indegree',
                               'indegree': 4,
                               "multapses": False}, MFGR_conn_param)
-                                                        
-    sim.nest.GetConnections(MF, GR)  # MFGR_conn
 
+                              
+                  
     # A_minus - Amplitude of weight change for depression
     # A_plus - Amplitude of weight change for facilitation
     # Wmin - Minimal synaptic weight
@@ -209,47 +184,21 @@ def create_cereb():
                           "weight": 1.0, "delay": 1.0})
         sim.nest.GetConnections(IO, vt)  # IOPC_conn
 
-    if PLAST2:
-        # MF-DCN excitatory plastic connections
-        # every MF is connected with every DCN
-        sim.nest.SetDefaults('stdp_synapse_cosexp',
-                             {"A_minus":   LTD2,
-                              "A_plus":    LTP2,
-                              "Wmin":      0.0,
-                              "Wmax":      0.25,
-                              "vt":        vt2[0]})
 
-        MFDCN_conn_param = {"model": 'stdp_synapse_cosexp',
-                            "weight": Init_MFDCN,
-                            "delay": 10.0}
+    MFDCN_conn_param = {"model":  "static_synapse",
+                        "weight": Init_MFDCN,
+                        "delay":  15.0}
+    sim.nest.Connect(MF, DCN, 'all_to_all', MFDCN_conn_param)
 
-        for i, DCNi in enumerate(DCN):
-            sim.nest.Connect(MF, [DCNi], 'all_to_all', MFDCN_conn_param)
-            A = sim.nest.GetConnections(MF, [DCNi])
-            sim.nest.SetStatus(A, {'vt_num': i})
-    else:
-        MFDCN_conn_param = {"model":  "static_synapse",
-                            "weight": Init_MFDCN,
-                            "delay":  10.0}
-        sim.nest.Connect(MF, DCN, 'all_to_all', MFDCN_conn_param)
-
-    sim.nest.GetConnections(MF, DCN)  # MFDCN_conn
-
-    # PC-DCN inhibitory plastic connections
+    # PC-DCN inhibitory connections
     # each DCN receives 2 connections from 2 contiguous PC
     count_DCN = 0
     for P in range(PC_num):
         sim.nest.Connect([PC[P]], [DCN[count_DCN]],
                          'one_to_one', PCDCN_conn_param)
-        if PLAST2:
-            sim.nest.Connect([PC[P]], [vt2[count_DCN]], 'one_to_one',
-                             {"model":  "static_synapse",
-                              "weight": 1.0,
-                              "delay":  1.0})
+
         if P % 2 == 1:
             count_DCN += 1
-
-    sim.nest.GetConnections(PC, DCN)  # PCDCN_conn
 
     # circuit = MF_pop + PC_pop + IO_pop + DCN_pop
     # return circuit
@@ -354,10 +303,8 @@ def create_brain():
 
     fan_out = sim.FixedNumberPostConnector(n=4)
     to_one = sim.FixedNumberPostConnector(n=1)  # like ont_to_one but random
-    sim.Projection(tg_ws[:40], MF_pop[:50], fan_out, static_syn(2.0))
-    sim.Projection(tg_ws[40:], MF_pop[50:], fan_out, static_syn(2.0))
-    sim.Projection(tg_ct, MF_pop[10:90], one_to_one, static_syn(2.0))
-    sim.Projection(tn_phase, MF_pop[10:90], one_to_one, static_syn(2.0))
+    sim.Projection(tg_pr, MF_pop[10:90], one_to_one, static_syn(50.0))
+    sim.Projection(tn_phase, MF_pop[10:90], one_to_one, static_syn(50.0))
 
     # Protractors activation
     random_weights = RandomDistribution('uniform', low=0.0, high=0.00001)

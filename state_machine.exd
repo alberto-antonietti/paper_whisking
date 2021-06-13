@@ -15,11 +15,13 @@ from hbp_nrp_excontrol.logs import clientLogger
 
 from std_msgs.msg import String
 
+
 pub = rospy.Publisher('go_nogo_state', String, queue_size=10)
 def talker(message):
     hello_str = f"{message} time:{rospy.get_time()}"
     pub.publish(hello_str)
 
+    
 set_model_state = rospy.ServiceProxy('/gazebo/set_model_state', SetModelState)
 spawn_entity = rospy.ServiceProxy('/gazebo/spawn_sdf_entity', SpawnEntity)
 
@@ -72,7 +74,6 @@ cyl_xml = """
   </model>
 </sdf>
 """
-
 
 shelf_xml = """
 <?xml version='1.0'?>
@@ -191,7 +192,7 @@ def nogo_trial():
 
 
 def random_state():
-    go_nogo = [True] * 5 + [False] * 5
+    go_nogo = [False] * 5 + [False] * 5
     trial_count = [0]
     date = str(datetime.datetime.now())
 

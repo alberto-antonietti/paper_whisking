@@ -42,7 +42,7 @@ def head_up(t, reward, recorder, state, joint_states, go_trial, gonogo, dcn):
         if dcn.rate > 0.1:
             clientLogger.info('dcn rate', dcn.rate)
 
-        if dcn.rate > 20.0:
+        if dcn.rate > 2000.0:
             state.value = 'up'
             recorder.record_entry('head', t, 'up')
             clientLogger.info('STATE:', state.value)
@@ -52,10 +52,10 @@ def head_up(t, reward, recorder, state, joint_states, go_trial, gonogo, dcn):
     if state.value == 'up':
         #clientLogger.info('neck_pos', neck_pos)
         
-        if neck_pos < -0.25:
+        if neck_pos < -0.06:
             clientLogger.info('Head raised', neck_pos)
             if go_trial:
-                reward.rate = 100.0
+                reward.rate = 10.0
                 clientLogger.info('Sending reward')
                 recorder.record_entry('contact', t, 'reward')
             else:
