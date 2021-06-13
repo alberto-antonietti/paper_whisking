@@ -24,8 +24,7 @@ sim.nest.SetKernelStatus({'local_num_threads' : CORES,
 # CEREBELLUM
 PLAST1 = True   # PF-PC ex
 
-#LTP1 = 0.005
-LTP1 = 0.0
+LTP1 = 0.01
 LTD1 = -0.03
 
 
