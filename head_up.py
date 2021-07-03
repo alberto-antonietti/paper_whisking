@@ -1,7 +1,6 @@
 import hbp_nrp_cle.tf_framework as nrp
 from hbp_nrp_cle.robotsim.RobotInterface import Topic
 import std_msgs.msg
-# import numpy as np
 from hbp_nrp_excontrol.logs import clientLogger
 from sensor_msgs.msg import JointState
 from gazebo_msgs.msg import ModelState
@@ -36,21 +35,15 @@ def head_up(t, reward, recorder, state, joint_states, go_trial, gonogo, dcn):
         for i in range(len(states.name)):
             if states.name[i] == 'neck_joint':
                 neck_pos = states.position[i]
-                #clientLogger.info('neck_pos', neck_pos)
                 
     if state.value == 'rest':
-        if dcn.rate > 0.1:
-            clientLogger.info('dcn rate', dcn.rate)
-
         if dcn.rate > 80.0:
             state.value = 'up'
             recorder.record_entry('head', t, 'up')
-            clientLogger.info('STATE:', state.value)
             
         cmd_pos = gain * neck_pos
 
     if state.value == 'up':
-        #clientLogger.info('neck_pos', neck_pos)
         
         if neck_pos < -0.06:
             clientLogger.info('Head raised', neck_pos)
@@ -69,6 +62,5 @@ def head_up(t, reward, recorder, state, joint_states, go_trial, gonogo, dcn):
         cmd_pos = gain * neck_pos
         if neck_pos >= -0.05:  # Head lowered
             state.value = 'rest'
-            clientLogger.info('STATE:', state.value)
 
     return std_msgs.msg.Float64(cmd_pos)

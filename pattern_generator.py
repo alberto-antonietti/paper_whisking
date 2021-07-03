@@ -1,6 +1,4 @@
 import hbp_nrp_cle.tf_framework as nrp
-# import numpy as np
-
 
 @nrp.MapSpikeSource("cpg", nrp.brain.cpg, nrp.fixed_frequency)
 @nrp.Robot2Neuron()

@@ -3,14 +3,9 @@ import numpy as np
 from hbp_nrp_excontrol.logs import clientLogger
 from sensor_msgs.msg import JointState
 from gazebo_msgs.msg import LinkStates
-# from gazebo_ros_muscle_interface.msg import MuscleStates  # Can we use it?
 from gazebo_msgs.msg import ContactsState
 from hbp_nrp_cle.robotsim.RobotInterface import Topic
 
-
-# TODO:
-# get population sizes from a .json file?
-# (NOT .py module (modules will be cached))
 w_per_side = 2  # whiskers per side
 tg_size = 2*100*w_per_side
 
@@ -45,7 +40,6 @@ def follicle_sensors(t,
         for i in range(len(states.name)):
             for side in ['L', 'R']:
                 for w_i in range(w_per_side):
-                    # clientLogger.info(states.name[i])
                     joint_name = 'whisker_' + side + str(w_i) + '_joint'
                     if states.name[i] == joint_name:
                         w = w_data[side][w_i]
@@ -124,8 +118,7 @@ def follicle_sensors(t,
             pop_size = 20  # neurons per population per whisker
 
             def get_pop(pop_index):
-                # tg[ [ L[ w0, w1, ...], R[...] ], ...]
-
+                
                 def get_slice(size, index):
                     begin = size * index
                     end = begin + size
@@ -142,7 +135,6 @@ def follicle_sensors(t,
                 rate = 2*103.0*abs(1.0 - w['dist'])
                 for pr in tg_pr:
                     pr.rate = rate
-                # clientLogger.info(rate)
 
                 if w['dist'] < 0.002:
                     tg_ht.rate = 100.0
@@ -154,7 +146,6 @@ def follicle_sensors(t,
                 tg_dt.rate = 10.0
 
             ang = w['ang']
-            # clientLogger.info("%2.2f" % ang)
 
             def gaussian(x, mu, sig):
                 pw = np.power
@@ -169,5 +160,3 @@ def follicle_sensors(t,
                 rate = 100. * gaussian(ang, rbf_mu, rbf_sig)
 
                 tg_ws[ang_i].rate = rate
-
-                # clientLogger.info(side_i, ang_i, "%2.2f" % rate)

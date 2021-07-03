@@ -2,7 +2,6 @@ import hbp_nrp_cle.tf_framework as nrp
 from cle_ros_msgs.msg import SpikeEvent
 from hbp_nrp_cle.robotsim.RobotInterface import Topic
 
-
 @nrp.MapCSVRecorder("recorder", filename="weights.csv", headers=["name", "t", "mean", "std"])
 
 @nrp.Robot2Neuron()

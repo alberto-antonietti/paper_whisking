@@ -1,6 +1,4 @@
 import hbp_nrp_cle.tf_framework as nrp
-# import numpy as np
-
 
 @nrp.MapSpikeSink("tg_pr",
                   nrp.map_neurons(range(4*20),

@@ -2,7 +2,6 @@ import hbp_nrp_cle.tf_framework as nrp
 from sensor_msgs.msg import JointState
 from hbp_nrp_cle.robotsim.RobotInterface import Topic
 
-
 @nrp.MapRobotSubscriber("joint_states", Topic('/mouse/joint_states', JointState))
 @nrp.MapCSVRecorder("recorder",
                     filename="joints_positions.csv",

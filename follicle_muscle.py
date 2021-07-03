@@ -1,7 +1,6 @@
 import hbp_nrp_cle.tf_framework as nrp
 from gazebo_msgs.srv import ApplyJointEffort
 from rospy import ServiceProxy, wait_for_service
-# from rospy import Duration
 from hbp_nrp_excontrol.logs import clientLogger
 
 

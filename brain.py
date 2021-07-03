@@ -30,8 +30,7 @@ LTD1 = -0.03
 
 Init_PFPC = {'distribution': 'uniform',
              'low': 1.0, 'high': 2.0}
-# Init_PFPC = 1.0
-Init_MFDCN = 0.4  # 0.3 troopo poco, 0.5 troppo?
+Init_MFDCN = 0.4
 Init_PCDCN = {'distribution': 'uniform',
              'low': -2.0, 'high': -1.0}
 RECORDING_CELLS = True
@@ -115,7 +114,6 @@ def create_cereb():
 
     MFGR_conn_param = {"model": "static_synapse",
                        "weight": {'distribution': 'uniform',
-                                  # -> 0.75 GR fire at 7 Hz
                                   'low': 0.6, 'high': 1.2},
                        "delay": 1.0}
 
@@ -199,8 +197,6 @@ def create_cereb():
         if P % 2 == 1:
             count_DCN += 1
 
-    # circuit = MF_pop + PC_pop + IO_pop + DCN_pop
-    # return circuit
     return MF_pop, GR_pop, PC_pop, IO_pop, DCN_pop, PFPC_conn
 
 
@@ -208,10 +204,7 @@ def create_brain():
     """
     Initializes PyNN with the neuronal network that has to be simulated
     """
-    #sim.setup(timestep=0.1, min_delay=0.1, max_delay=100.0,
-    #          threads=1, rng_seeds=[1234])
 
-    # Parameters were taken from the husky braitenberg brain experiment
 
     SENSORPARAMS = {'cm': 0.025,
                     'v_rest': -60.5,
@@ -224,14 +217,8 @@ def create_brain():
                     'tau_syn_E': 2.5,
                     'tau_syn_I': 2.5}
 
-    # SYNAPSE_PARAMS = {"weight": 0.5e-4,
-    #                   "delay": 20.0,
-    #                   'U': 1.0,
-    #                   'tau_rec': 1.0,
-    #                   'tau_facil': 1.0}
 
     cell_class = sim.IF_cond_alpha(**SENSORPARAMS)
-    #bigcell_class = sim.IF_cond_alpha(**BIGCELPARAMS)
 
     # ~100 neurons per follicle (McElvain 2018)
     n_whisks = 4
@@ -329,18 +316,9 @@ def create_brain():
     #
     tg_ganglion = sim.Assembly(tg_pr, tg_ct, tg_dt, tg_ht, tg_ws)
     fn_moto = sim.Assembly(fn_pro, fn_ret)
-    # cereb = sim.Assembly(MF_pop, PC_pop, IO_pop, DCN_pop)
 
     logger.info(f"TG: {min(tg_ganglion)}, {max(tg_ganglion)}")
     logger.info(f"FN: {min(fn_moto)}, {max(fn_moto)}")
-
-    #
-    # Views
-    #
-    # fn_pro_view = sim.PopulationView(fn_pro, slice(0, None, 5))
-    # fn_ret_view = sim.PopulationView(fn_ret, slice(0, None, 5))
-    # MF_view = sim.PopulationView(MF_pop, slice(0, None, 3))   # 300/3
-    # GR_view = sim.PopulationView(GR_pop, slice(0, None, 60))  # (300*20)/60
 
     cells = sim.Assembly(cpg, fn_pro, fn_ret,
                          tg_pr, tg_ct, tg_dt, tg_ht, tg_ws,

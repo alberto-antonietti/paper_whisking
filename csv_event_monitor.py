@@ -5,7 +5,6 @@ logger = logging.getLogger()
 
 @nrp.MapVariable("go_nogo_variable", scope=nrp.GLOBAL)
 
-
 @nrp.MapCSVRecorder("recorder", filename="gonogo_events.csv",
                     headers=["event", "time"])
 @nrp.MapRobotSubscriber("go_nogo", Topic("/go_nogo_state", String))

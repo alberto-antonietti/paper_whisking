@@ -5,7 +5,6 @@
     <ns1:file>brain.py</ns1:file>
   </ns1:brainModel>
   <ns1:bodyModel robotId="mouse">model.sdf</ns1:bodyModel>
-  <ns1:transferFunction src="shelf_contact.py" active="false" priority="0" xsi:type="ns1:PythonTransferFunction" />
   <ns1:transferFunction src="phase_detection.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
   <ns1:transferFunction src="head_up.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
   <ns1:transferFunction src="spike_monitor.py" active="true" priority="0" xsi:type="ns1:PythonTransferFunction" />
