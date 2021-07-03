@@ -46,14 +46,17 @@ false_alarm = np.zeros(N_trial, dtype=int)
 for e in events:
     if e[0] == "contact":
         trial_of_event = int(float(e[1])) // 2
-        if trial_of_event == N_trial:
-            break
-        hits[trial_of_event] = 1
+        if int(float(e[1]) - 0.02) // 2 != int(float(e[1])) // 2:
+            print(e[1])
+        if trial_of_event < N_trial:
+            
+            hits[trial_of_event] = 1
         
-        if e[2] == "no_reward":
-            false_alarm[trial_of_event] = 1
-        else:
-            good_response[trial_of_event] = 1
+            if e[2] == "no_reward":
+                false_alarm[trial_of_event] = 1
+            else:
+                good_response[trial_of_event] = 1
+                
             
 plt.figure()
 plt.plot(hits, "k", label="hits", linestyle="", marker='o')
@@ -68,11 +71,11 @@ false_rate =  np.zeros(N_sess, dtype=float)
 for s in range(N_sess):
     true_rate[s] = np.sum(good_response[s * 10: (s + 1) * 10]) * 20
     false_rate[s] = np.sum(false_alarm[s * 10: (s + 1) * 10]) * 20
-
+print(true_rate)
 plt.figure()
 plt.plot(range(1, N_sess + 1),true_rate, "k", label="true rate", marker='o')
 plt.plot(range(1, N_sess + 1),false_rate, "r", label="false rate", marker='x', markersize=10)
 plt.ylim([-5, 105])
 plt.legend()
-
+plt.savefig(folder + "rates.png")
 plt.show()
