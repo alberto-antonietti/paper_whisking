@@ -2,11 +2,11 @@
 Code related to the paper: "Brain-inspired spiking neural network controller for a neurorobotic whisker system" by Alberto Antonietti, Alice Geminiani, Edoardo Negri, Egidio D'Angelo, Claudia Casellato*, and Alessandra Pedrocchi*. Under review.
 
 ## Organization of the repository
-- `./` The main folder contain all the files that are needed to clone the experiment in the NRP (NeuroRobotics Platform) of the Human Brain Project.
+- `./` The main folder contains all the files that are needed to clone the experiment in the NRP (NeuroRobotics Platform) of the Human Brain Project.
 - `mouse/` contains the 3D model of the modified robot mouse
 - `data/` contains the data coming from the 10 experiments performed for Control and L7-PP2B groups
-  - `Control/` contains the data for the 10 Control simulations (sub-folders 0-9), each one contains the data of a single simulation
-  - `L7-PP2B/` contains the data for the 10 Knock-out simulations (sub-folders 0-9), each one contains the data of a single simulation
+  - `Control/` contains the data for the 10 Control simulations (sub-folders `0-9`), each one contains the data of a single simulation
+  - `L7-PP2B/` contains the data for the 10 Knock-out simulations (sub-folders `0-9`), each one contains the data of a single simulation
   - `Generate_Figures.ipynb` is the Jupyter Notebook that can be used to generate the figures of the paper and the data reported.
 
 ## Software used and library versions
