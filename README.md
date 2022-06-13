@@ -1,5 +1,5 @@
 # Brain-inspired spiking neural network controller for a neurorobotic whisker system
-Code related to the paper: "Brain-inspired spiking neural network controller for a neurorobotic whisker system" by Alberto Antonietti, Alice Geminiani, Edoardo Negri, Egidio D'Angelo, Claudia Casellato*, and Alessandra Pedrocchi*. Under review.
+Code related to the paper: "Brain-inspired spiking neural network controller for a neurorobotic whisker system" by Alberto Antonietti, Alice Geminiani, Edoardo Negri, Egidio D'Angelo, Claudia Casellato*, and Alessandra Pedrocchi*. _Front. Neurorobot._ 16:817948. doi: [10.3389/fnbot.2022.817948.](https://doi.org/10.3389/fnbot.2022.817948)
 
 ## Organization of the repository
 - `./` The main folder contains all the files that are needed to clone the experiment in the NRP (NeuroRobotics Platform) of the Human Brain Project.
